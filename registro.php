@@ -292,10 +292,10 @@
                         </div>
 
                         <!--Terminos y condiciones - MODAL INFO-->
-                        <div class="modal modal-xl tycModal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal modal-xl tycModal" autofocus id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-scrollable ">
                                 <div class="modal-content">  
-                                    <div class="modal-header">
+                                    <div class="modal-header" >
                                         <h1 class="modal-title fs-5" style="display:inline;" id="staticBackdropLabel"><b style="color:blue;">AVISO DE PRIVACIDAD DGIRE</b></h1>
                                     </div>
                                     <div class="modal-body" style="margin-left:13px;margin-right:13px; text-align: justify;">
@@ -382,7 +382,7 @@
                             </div>
                         </div>
 
-
+                                            
                         <!--Terminos y Condiciones-->
                         <div class="row">
                             <div class="col-md-2"></div>
@@ -409,12 +409,15 @@
                             <br/>
                             
                         </div>
+
                         <!--Suma-->
                         <div class="row mb-3" id="suma" hidden>
                             
                             <label class="col-md-4 col-form-label text-md-end" id="operacion" value=""></label>
                             <div class="col-md-3">
                                 <input  type="text" class="form-control" name="name" value="" id="result" required>
+                                <span id="resultCorrecto" style="display:none;color:green;"> Confirmado</span>
+                                <span id="resultIncorrecto" style="display:none;color:red;"> Incorrecto, verifique </span>
                             </div>
                             <div class="col-md-3">
                                 <button class="btn btn-light" type="checkbox" id="refrescar">Refrescar</button>
@@ -422,6 +425,7 @@
                             
                         </div>
                         <br/>
+
                         <!--Boton de Envío-->
                         <div class="col-mb-3 text-md-center">
                             <div class="col-md-12">
@@ -440,8 +444,11 @@
             <div class="col-md-1">
             </div>
         </div>
-    </div> 
-
+    </div>  
+   <?php
+        include 'cdnScript.php';
+    ?>
+    <script type="text/javascript" src="js/registro.js"></script> 
 <?php
     include 'pie.php';
-?>
+?> 

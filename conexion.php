@@ -1,7 +1,7 @@
 <?php 
     class Conexion{
         
-        private $servidor    = 'localhost';
+        private $servidor    = '132.247.147.17';
         private $usuario     = 'root';
         private $contrasenia = '';
         private $db          = 'pagos';
@@ -29,6 +29,7 @@
             $sentencia = $this->conexion->prepare($query);
             $sentencia -> execute();
             return $sentencia -> fetchAll();
+            
         }
 
 
