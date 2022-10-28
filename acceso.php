@@ -37,15 +37,15 @@
                                         <div class="card-body">
                                             <form action="" method="post">
                                                 <!----------Correo electonico------------>
-                                                <div class="row mb-3" id="">
-                                                    <label  class="col-md-3 col-form-label text-md-end">
-                                                        <small><b style="color: blue;">Correo electrónico:</b></small>
-                                                    </label>
+                                                <div class="row mb-3">
+                                                <label class="col-md-3 col-form-label text-md-end"><small><b style="color: blue;">Correo electrónico:</b></small></label>
 
-                                                    <div class="col-md-9">
-                                                        <input  type="text" class="form-control" name="codigoPostal" value="" required >
-                                                    </div> 
+                                                <div class="col-md-9">
+                                                    <input id="correo" type="email" class="form-control" name="email" value="" required autocomplete="email">
+                                                    <span id="errorCorreo" style="display:none;color:red;"><small>Formato de correo inválido</small></span>
+                                                    <span id="successCorreo" style="display:none;color:green;"><small>Correo válido</small></span>
                                                 </div>
+                                            </div>
 
                                                 <!----------Contraseña------------>
                                                 <div class="row mb-3" id="">
@@ -57,6 +57,33 @@
                                                         <input  type="text" class="form-control" value="" required >
                                                     </div> 
                                                 </div>
+                                                <!--Captcha-->
+                                                <div class="col-mb-3 text-md-center">
+                                                    <div class="col-md-6">
+                                                        <button class="btn btn-secondary" id="btnCaptcha">
+                                                            <input type="checkbox" id="captcha">
+                                                            <b>No soy un robot</b> 
+                                                        </button>
+                                                    </div> 
+                                                    <br/>
+                                                    
+                                                </div>
+
+                                                <!--Suma-->
+                                                <div class="row mb-3" id="suma" hidden>
+                                                    
+                                                    <label class="col-md-3 col-form-label text-md-end" id="operacion" value=""></label>
+                                                    <div class="col-md-4">
+                                                        <input  type="text" class="form-control" name="name" value="" id="result" required>
+                                                        <span id="resultCorrecto" style="display:none;color:green;"> Confirmado</span>
+                                                        <span id="resultIncorrecto" style="display:none;color:red;"> Incorrecto, verifique </span>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <button class="btn btn-light" type="checkbox" id="refrescar">Refrescar</button>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <br/>
                                                 </br>
                                                 <a href="#" class="btn btn-primary">Ingresar</a>
                                                 
@@ -86,7 +113,7 @@
                             <div class="modal-dialog modal-dialog-scrollable ">
                                 <div class="modal-content">  
                                     <div class="modal-header" >
-                                        <h1 class="modal-title fs-5" style="display:inline;" id="staticBackdropLabel"><b style="color:blue;">AVISO DE PRIVACIDAD DGIRE</b></h1>
+                                        <h1 class="modal-title fs-5 w-100" style="display:block;text-align:center;" id="staticBackdropLabel"><b style="color:blue;">AVISO DE PRIVACIDAD DGIRE</b></h1>
                                     </div>
                                     <div class="modal-body" style="margin-left:13px;margin-right:13px; text-align: justify;">
                                     <p><small> La Dirección General de Incorporación y Revalidación de Estudios (en adelante DGIRE) de la Universidad Nacional Autónoma de México (en lo subsiguiente UNAM), con domicilio en Circuito Cultural S/N (enfrente de la Dirección General de Planeación), Ciudad Universitaria, Alcaldía Coyoacán, C.P. 04510, en la Ciudad de México, recaba datos personales y es responsable del tratamiento que se les de.</small></p>

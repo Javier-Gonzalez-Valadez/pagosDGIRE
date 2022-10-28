@@ -21,7 +21,7 @@
                         
                         <div class="row">
                                 <div class="col-md-12 text-md-center">
-                                    <a href="../registro.php" class="btn btn-primary" id="enviar">Salir</a>
+                                    <a href="../acceso.php" class="btn btn-primary" id="enviar">Salir</a>
                                 </div>
                         </div>
                         </br>

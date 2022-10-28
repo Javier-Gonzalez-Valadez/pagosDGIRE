@@ -1,9 +1,12 @@
 $(document).ready(function(){
 
+
     let primerValor;
     let segundoValor;
     let haEscrito=false;
     let resultado;
+
+    
     $('#captchaCheck').on('change', function(e){
         e.preventDefault();
         console.log("Entró al cambio"); 
@@ -33,7 +36,7 @@ $(document).ready(function(){
                     }
                     if( (resultado.toString().length==2) && ($('#result').val().length == resultado.toString().length) ){ 
                         haEscrito=true;
-                            console.log("Cerca");
+                            console.log("CErca");
                             if($('#result').val() == resultado){
                                 $('#resultCorrecto').show();
                                 $('#resultIncorrecto').hide();
@@ -55,6 +58,9 @@ $(document).ready(function(){
             });  
         }else{  
             $('#bloqueSuma').attr("hidden", true);
+            $('#resultCorrecto').hide();
+            $('#resultIncorrecto').hide(); 
+            $('#result').val('');
         }
         
     });
@@ -80,7 +86,7 @@ $(document).ready(function(){
             $('#registrarCambio').on('click',function(){
                 $('.modalConfirmacion').hide(); 
                 $('.modalOkFinal').show();
-                $("#terminar").trigger("click");
+                //$("#terminar").trigger("click");
                 
             })
             $('#terminar').on('click', function(){ 
@@ -88,7 +94,10 @@ $(document).ready(function(){
 
             });
     });
-
+    $('#botonEnvolvente').on('click',function(e){
+        
+        //e.preventDefault();
+    });
 });
 
 

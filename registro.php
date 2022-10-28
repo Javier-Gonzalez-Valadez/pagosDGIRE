@@ -296,8 +296,7 @@
                             <div class="modal-dialog modal-dialog-scrollable ">
                                 <div class="modal-content">  
                                     <div class="modal-header" >
-                                        <h1 class="modal-title fs-5" style="display:inline;" id="staticBackdropLabel"><b style="color:blue;">AVISO DE PRIVACIDAD DGIRE</b></h1>
-                                    </div>
+                                        <h1 class="modal-title fs-5 w-100" style="display:block;text-align:center;" id="staticBackdropLabel"><b style="color:blue;">AVISO DE PRIVACIDAD DGIRE</b></h1>                                    </div>
                                     <div class="modal-body" style="margin-left:13px;margin-right:13px; text-align: justify;">
                                     <p><small> La Dirección General de Incorporación y Revalidación de Estudios (en adelante DGIRE) de la Universidad Nacional Autónoma de México (en lo subsiguiente UNAM), con domicilio en Circuito Cultural S/N (enfrente de la Dirección General de Planeación), Ciudad Universitaria, Alcaldía Coyoacán, C.P. 04510, en la Ciudad de México, recaba datos personales y es responsable del tratamiento que se les de.</small></p>
                                         <h6><b>Los datos personales que son recabados serán utilizados para las siguientes finalidades:</b></h6>
@@ -382,7 +381,7 @@
                             </div>
                         </div>
 
-                                            
+                                             
                         <!--Terminos y Condiciones-->
                         <div class="row">
                             <div class="col-md-2"></div>

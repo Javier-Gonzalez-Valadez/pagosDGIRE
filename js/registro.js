@@ -161,7 +161,7 @@ $(document).ready(function(){
     $('#captcha').on('change', function(e){ 
         primerValor = random(1,100);
         segundoValor = random(1,100);
-        Fresultado = primerValor + segundoValor;
+        resultado = primerValor + segundoValor; 
         
         if( $(this).is(':checked') ){
             console.log(resultado); 
@@ -208,7 +208,10 @@ $(document).ready(function(){
                 }                 
             });
         }else{
-            $('#suma').attr('hidden',true); 
+            $('#suma').attr('hidden',true);
+            $('#resultCorrecto').hide();
+            $('#resultIncorrecto').hide(); 
+            $('#result').val('');
         }
         $('#refrescar').on('click',function(e){
             
@@ -224,8 +227,6 @@ $(document).ready(function(){
             e.preventDefault();
             
         });
-
-        
     });
 });
 
@@ -234,8 +235,11 @@ $('#tyc').on('change', function(e){
 
     if(e.target.checked){
         $('.tycModal').show();
+        $('#cerrarModal').trigger("click");
+        $('.tycModal').show();
         $('#cerrarModal').on('click', function(){
             $('.tycModal').hide();
+
         });
     }else{
         $('.tycModal').hide();
