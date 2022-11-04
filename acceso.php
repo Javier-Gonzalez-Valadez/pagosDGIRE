@@ -37,37 +37,37 @@
                             <div class="row" style="margin-top:15px;">
                                 <hr>
                                 <!----------------------------Informacion de Ingreso------------------------------>
-                                <div class="col-12 col-md-6 colg-6 col-sm-12 col-xs-12">
-                                    <h5 style="display: block; text-align:center;"><b><small>Bienvenido al sistema de pagos de la DGIRE</small></b></h5>
-                                    <p><small><b>Pasos para solicitar servicio(s) :</b></small></p>
+                                <div class="col-12 col-md-12 col-lg-6 col-sm-12 col-xs-12">
+                                    <p><b>Pasos para solicitar servicio(s) :</b></p>
                                     <small>
                                         <ol style="text-align:justify;"> 
-                                            <li><small>Registrarse en el sistema, con correo electrónico y una contraseña personalizada. Si no se ha registrado de click <a href="registro.php" class="color">Aquí</a></small></li>
-                                            <li><small>Activar la cuenta al recibir la confirmación de su registro en el correo electrónico.</small></li>
-                                            <li><small>Solicitar servicio(s), ingresando al sistema de pagos en la opción de "Solicitud de pago".</small></li>
-                                            <li><small>Recibir Ficha de Depósito Digital Referenciada (FDR).</small></li>
-                                            <li><small>Acudir a realizar el pago en cualquier sucursal del banco BBVA Bancomer.</small></li>
-                                            <li><small>Escanear el comprobante de pago bancario (CPB).</small></li>
-                                            <li><small>Enviar vía sistema de pagos la imagen escaneada del CPB en formato jpg no mayor a 800Kb. Opción "Cargar Pago".</small></li>
-                                            <li><small>Esperar la confirmación y autorización del pago correspondiente vía correo electrónico; asi como el Comprobante Fiscal Digital (CFD) si registró sus datos fiscales y solicitó factura, o "ticket" en caso contrario.</small></li>
-                                            <li><small>Acudir al área correspondiente de la DGIRE a solicitar el servicio.</small></li>
+                                            <li>Registrarse en el sistema, con correo electrónico y una contraseña personalizada. Si no se ha registrado de click <a href="registro.php" class="color">Aquí</a></li>
+                                            <li>Activar la cuenta al recibir la confirmación de su registro en el correo electrónico.</li>
+                                            <li>Solicitar servicio(s), ingresando al sistema de pagos en la opción de "Solicitud de pago".</li>
+                                            <li>Recibir Ficha de Depósito Digital Referenciada (FDR).</li>
+                                            <li>Acudir a realizar el pago en cualquier sucursal del banco BBVA Bancomer.</li>
+                                            <li>Escanear el comprobante de pago bancario (CPB).</li>
+                                            <li>Enviar vía sistema de pagos la imagen escaneada del CPB en formato jpg no mayor a 800Kb. Opción "Cargar Pago".</li>
+                                            <li>Esperar la confirmación y autorización del pago correspondiente vía correo electrónico; asi como el Comprobante Fiscal Digital (CFD) si registró sus datos fiscales y solicitó factura, o "ticket" en caso contrario.</li>
+                                            <li>Acudir al área correspondiente de la DGIRE a solicitar el servicio.</li>
                                         </ol>
                                     </small>
                                 </div>
                                 <!----------------------------Formulario de Ingreso------------------------------>
-                                <div class="col-12 col-md-6 colg-6 col-sm-12 col-xs-12">
+                                <div class="col-12 col-md-12 col-lg-6 col-sm-12 col-xs-12">
                                     <div class="card text-center">
-                                        <div class="card-header">
-                                            <h5><b>Ingresar</b></h5>
-                                        </div>
+                                            
+                                            <p></p>
+                                            <h1><b><i class='fa fa-user-circle-o logoUser'></i></b></h1>
+                                            <div class=""></div>
                                         <small>
                                         <div class="card-body">
                                             <form action="" method="post">
                                                 <!----------Correo electonico------------>
                                                 <div class="row mb-3">
-                                                    <label class="col-md-3 col-form-label text-md-end"><small><b class="color">Correo electrónico:</b></small></label>
+                                                    <label class="col-12 col-xs-12 col-md-12 col-lg-12 col-xl-12 col-form-label text-md-center"><small><b class="color">Correo electrónico:</b></small></label>
 
-                                                    <div class="col-md-9">
+                                                    <div class="col-12 col-xs-12 col-md-12 col-lg- col-xl-12">
                                                         <input id="correo" type="email" class="form-control" name="email" value="" required autocomplete="email">
                                                         <span id="errorCorreo" style="display:none;color:red;"><small>Formato de correo inválido</small></span>
                                                         <span id="successCorreo" style="display:none;color:green;"><small>Correo válido</small></span>
@@ -76,18 +76,18 @@
 
                                                 <!----------Contraseña------------>
                                                 <div class="row mb-3" id="">
-                                                    <label  class="col-md-3 col-form-label text-md-end">
+                                                    <label  class="col-12 col-xs-12 col-md-12 col-lg- col-xl-12 col-form-label text-md-center">
                                                         <small><b class="color">Contraseña:</b></small>
                                                     </label>
 
-                                                    <div class="col-md-9">
+                                                    <div class="col-12 col-xs-12 col-md-12 col-lg-12 col-xl-12">
                                                         <input  type="text" class="form-control" value="" required >
                                                     </div> 
                                                 </div>
                                                 <!--Captcha-->
                                                 <div class="col-mb-3 text-md-center">
                                                     <div class="col-md-6">
-                                                        <button class="btn btn-secondary" id="btnCaptcha">
+                                                        <button class="btn " id="btnCaptcha">
                                                             <input type="checkbox" id="captcha">
                                                             <b>No soy un robot</b> 
                                                         </button>
@@ -99,20 +99,20 @@
                                                 <!--Suma-->
                                                 <div class="row mb-3" id="suma" hidden>
                                                     
-                                                    <label class="col-md-3 col-form-label text-md-end" id="operacion" value=""></label>
-                                                    <div class="col-md-5">
+                                                    <label class="col-12 col-xs-12 col-md-3 col-lg-3 col-form-label text-md-end" id="operacion" value=""></label>
+                                                    <div class="col-12 col-xs-12 col-md-4 col-lg-5">
                                                         <input  type="text" class="form-control" name="name" value="" id="result" required>
                                                         <span id="resultCorrecto" style="display:none;color:green;"> Confirmado</span>
                                                         <span id="resultIncorrecto" style="display:none;color:red;"> Incorrecto, verifique </span>
                                                     </div>
-                                                    <div class="col-md-3">
-                                                        <button class="btn btn-light" type="checkbox" id="refrescar">Refrescar</button>
+                                                    <div class="col-12 col-xs-12 col-md-4 col-lg-4">
+                                                        <button class="btn btn-outline-info btn-sm" type="checkbox" id="refrescar">Refrescar <i class='fa fa-refresh'></i></button>
                                                     </div>
                                                     
                                                 </div>
                                                 <br/>
                                                 </br>
-                                                <button class="btn btn-primary" >Iniciar Sesión</button>
+                                                <button class="btn btn-primary" ><i class='fa fa-sign-in'></i> Iniciar Sesión</button>
                                                 
                                             </form>
                                             <hr>

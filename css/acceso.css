@@ -1,6 +1,11 @@
+body{
+    /*background-image: url("../imgs/cubes.jpg");*/
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 .banner{
     background-color:midnightblue;  
-    text-align: center;
+    text-align: center; 
     align-items: center;
 }
 .bannerPagos{
@@ -42,6 +47,11 @@
 #txtDgire{
     color:GoldenRod;
     font-size: 18px;;
+}
+
+.logoUser{
+    font-size: 1.5em;
+    color: rgb(201, 199, 199);
 }
 
 .txtPagos{
