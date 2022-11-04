@@ -1,3 +1,70 @@
 .banner{
-    background-color:yellow;
+    background-color:midnightblue;  
+    text-align: center;
+    align-items: center;
+}
+.bannerPagos{
+    background-color:goldenrod;  
+    text-align: center;
+    align-items: center;
+}
+.color{
+    color: midnightblue;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: midnightblue !important;
+    border-color: midnightblue !important;
+}
+
+#imgUnam:hover{
+    cursor: pointer;
+}
+
+#imgDgire:hover{
+    cursor: pointer;
+}
+
+#imgUnam{
+    max-width: 70px;
+    max-height: 50px;
+}
+#imgDgire{
+    max-width: 70px;
+    max-height: 50px;
+}
+
+#txtUnam{
+    color:white;
+    font-size: 18px;;
+}
+
+#txtDgire{
+    color:GoldenRod;
+    font-size: 18px;;
+}
+
+.txtPagos{
+    color: white;
+    font-size: 26px;
+}
+
+/*DGIRE Y UNAM*/
+@media (min-width: 1001px){
+    .hidden-lg, .hidden-md{
+        display: none !important;
+    }
+    .hidden-sm, .hidden-xs{
+        display: true;
+       }
+}
+
+/*DIRECCION GENERAL DE INCORPORACION Y UNIVERSIDAD NACIONAL AUTONOMA MEXICO*/
+@media (max-width: 1000px){
+    .hidden-sm, .hidden-xs{
+     display: none !important;
+    }
+    .hidden-lg, .hidden-md{
+        display:  true;
+    }
 }

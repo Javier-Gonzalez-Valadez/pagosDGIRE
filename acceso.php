@@ -1,28 +1,48 @@
 <?php include 'cabecera.php';?>
 <link rel="stylesheet" href="css/acceso.css">
 <?php include 'cabecera2.php';?>
-     <div class="">
-            <div class="row banner">
-                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, nemo earum, praesentium pariatur, deleniti provident similique aspernatur excepturi dolorem obcaecati id ipsum voluptates aut totam in non molestiae dolore harum.
-            </div> 
-     </div>
+                <div class="row banner"> 
+                    <div class="col-2 col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                        <a href="https://www.unam.mx/" target=_BLANK> 
+                            <img class=""src="imgs/unam_white.png" id="imgUnam"alt=""> 
+                        </a>
+                    </div>
+                    <div class="col-4 col-lg-5 col-md-5 col-sm-4 col-xs-4">
+                        <a href="https://www.unam.mx/" style="text-decoration:none;" target=_BLANK>
+                            <h4  class=" hidden-sm hidden-xs" id="txtUnam" style="color:white;">Universidad Nacional Autónoma de México</h4>
+                            <h4  class=" hidden-md hidden-lg" id="txtUnam" style="color:white;">UNAM</h4>
+                        </a>
+                    </div>
+                    <div class="col-4 col-lg-5 col-md-5 col-sm-4 col-xs-4">
+                        <a href="https://www.dgire.unam.mx/webdgire/" style="text-decoration:none;" target=_BLANK>
+                            <h4 class=" hidden-sm hidden-xs" id="txtDgire">Dirección General de Incorporación y Revalidación de Estudios</h4>
+                            <h4 class=" hidden-md hidden-lg" id="txtDgire">DGIRE</h4> 
+                        </a>
+                    </div>
+                    <div class="col-2 col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                        <a href="https://www.dgire.unam.mx/webdgire/" target="_BLANK">
+                            <img class="" src="imgs/dgire_white.png" id="imgDgire" alt=""> 
+                        </a>
+                    </div>
+                </div>
+                <div class="row bannerPagos">
+                    <div class="col-12 col-lg col-md-12 col-sm-12 col-xs-12 txtPagos    "><p>Unidad Administrativa Sistema de Pagos</p></div>
+                </div> 
     <div class="container">
-        <div class="row">
+        <div class="row"  >
                     
             <div class="col-md-1"></div>
-            <div class="col-md-10">
-                <div class="card w-100">
-                    
-                    <div class="card-body">
+            <div class="col-md-10"  >
                         <div class="container">
-                            <div class="row">
+                            <div class="row" style="margin-top:15px;">
+                                <hr>
                                 <!----------------------------Informacion de Ingreso------------------------------>
-                                <div class="col-md-6">
+                                <div class="col-12 col-md-6 colg-6 col-sm-12 col-xs-12">
                                     <h5 style="display: block; text-align:center;"><b><small>Bienvenido al sistema de pagos de la DGIRE</small></b></h5>
                                     <p><small><b>Pasos para solicitar servicio(s) :</b></small></p>
                                     <small>
                                         <ol style="text-align:justify;"> 
-                                            <li><small>Registrarse en el sistema, con correo electrónico y una contraseña personalizada. Si no se ha registrado de click <a href="registro.php">Aquí</a></small></li>
+                                            <li><small>Registrarse en el sistema, con correo electrónico y una contraseña personalizada. Si no se ha registrado de click <a href="registro.php" class="color">Aquí</a></small></li>
                                             <li><small>Activar la cuenta al recibir la confirmación de su registro en el correo electrónico.</small></li>
                                             <li><small>Solicitar servicio(s), ingresando al sistema de pagos en la opción de "Solicitud de pago".</small></li>
                                             <li><small>Recibir Ficha de Depósito Digital Referenciada (FDR).</small></li>
@@ -35,7 +55,7 @@
                                     </small>
                                 </div>
                                 <!----------------------------Formulario de Ingreso------------------------------>
-                                <div class="col-md-6">
+                                <div class="col-12 col-md-6 colg-6 col-sm-12 col-xs-12">
                                     <div class="card text-center">
                                         <div class="card-header">
                                             <h5><b>Ingresar</b></h5>
@@ -45,19 +65,19 @@
                                             <form action="" method="post">
                                                 <!----------Correo electonico------------>
                                                 <div class="row mb-3">
-                                                <label class="col-md-3 col-form-label text-md-end"><small><b style="color: blue;">Correo electrónico:</b></small></label>
+                                                    <label class="col-md-3 col-form-label text-md-end"><small><b class="color">Correo electrónico:</b></small></label>
 
-                                                <div class="col-md-9">
-                                                    <input id="correo" type="email" class="form-control" name="email" value="" required autocomplete="email">
-                                                    <span id="errorCorreo" style="display:none;color:red;"><small>Formato de correo inválido</small></span>
-                                                    <span id="successCorreo" style="display:none;color:green;"><small>Correo válido</small></span>
+                                                    <div class="col-md-9">
+                                                        <input id="correo" type="email" class="form-control" name="email" value="" required autocomplete="email">
+                                                        <span id="errorCorreo" style="display:none;color:red;"><small>Formato de correo inválido</small></span>
+                                                        <span id="successCorreo" style="display:none;color:green;"><small>Correo válido</small></span>
+                                                    </div>
                                                 </div>
-                                            </div>
 
                                                 <!----------Contraseña------------>
                                                 <div class="row mb-3" id="">
                                                     <label  class="col-md-3 col-form-label text-md-end">
-                                                        <small><b style="color: blue;">Contraseña:</b></small>
+                                                        <small><b class="color">Contraseña:</b></small>
                                                     </label>
 
                                                     <div class="col-md-9">
@@ -92,31 +112,30 @@
                                                 </div>
                                                 <br/>
                                                 </br>
-                                                <a href="#" class="btn btn-primary">Ingresar</a>
+                                                <button class="btn btn-primary" >Iniciar Sesión</button>
                                                 
                                             </form>
                                             <hr>
-                                            <p class="text-md-end"><small><a href="recuperarContrasenia/recuperar_contrasenia.php">¿Olvidó su contraseña?</a></small></p> 
-                                            <p class="text-md-end"><small>¿Aún no estás registrado? <a href="registro.php">Registrarse</a></small></p>
+                                            <p class="text-md-end"><small><a class="color" href="recuperarContrasenia/recuperar_contrasenia.php">¿Olvidó su contraseña?</a></small></p> 
+                                            <p class="text-md-end"><small>¿Aún no estás registrado? <a class="color" href="registro.php">Registrarse</a></small></p>
                                         </div></small>
                                              
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <b><hr></b>
                         </div>
+                        
                         <!--------------------Aviso de Privacidad------------------->
                         <div class="container">
                         <div class="row">
                             <div class="col-md-12" style="text-align:center;">
-                                <p><small><b> </b><a class="abrirModal" id="abrirModal" style="cursor:pointer;"><u>Aviso de Privacidad</u></a></small></p>
+                                <p><small><b> </b><a class="abrirModal" id="abrirModal" class="color" style="cursor:pointer;"><u>Aviso de Privacidad</u></a></small></p>
                             </div>
                         </div>
                     </div>
-                    </div>
-                   
-                    <img src="imgs/Footer.png" class="w-100" alt="">
-                </div>
+                 
                 
                 
             </div>
