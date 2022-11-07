@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="row bannerPagos">
-                    <div class="col-12 col-lg col-md-12 col-sm-12 col-xs-12 txtPagos    "><p>Unidad Administrativa Sistema de Pagos</p></div>
+                    <div class="col-12 col-lg col-md-12 col-sm-12 col-xs-12 txtPagos"><p>Unidad Administrativa Sistema de Pagos</p></div>
                 </div> 
     <div class="container">
         <div class="row"  >
@@ -87,7 +87,7 @@
                                                 <!--Captcha-->
                                                 <div class="col-mb-3 text-md-center">
                                                     <div class="col-md-6">
-                                                        <button class="btn " id="btnCaptcha">
+                                                        <button class="btn btn-outline-secondary" id="btnCaptcha">
                                                             <input type="checkbox" id="captcha">
                                                             <b>No soy un robot</b> 
                                                         </button>
@@ -112,7 +112,7 @@
                                                 </div>
                                                 <br/>
                                                 </br>
-                                                <button class="btn btn-primary" ><i class='fa fa-sign-in'></i> Iniciar Sesión</button>
+                                                <button class="btn btn-primary" > Iniciar Sesión <i class='fa fa-unlock'></i></button>
                                                 
                                             </form>
                                             <hr>
