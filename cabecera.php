@@ -18,4 +18,7 @@
     <!--ICONOS MIN CSS-->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>  
 
+    <!--Etiqueta de la bibliotec del jQuery-->
+    <script type="text/javascript" src="strength.js"></script>
+
     

@@ -37,8 +37,8 @@
                     <h5 class="card-title" style="color: midnightblue; text-align:center;">Datos de registro al sistema de pagos DGIRE</h5>
                     <p style="text-align:center;"><small>Por favor llene el formulario que se le proporciona, los campos con * son obligatorios.</small></p>
 
-                    <div class="" style=" " >Datos personales</div>
-
+                    <div  class="marco" >Datos personales</div>
+                    </br>
                     <form method="POST" action="">
                         <!--Perfil-->
                         <div class="row mb-3">
@@ -62,14 +62,14 @@
                         </div>
                         <!--Apellido Paterno-->
                         <div class="row mb-3">
-                            <label for="apellidoPaterno" class="col-md-4 col-form-label text-md-end">Apellido Paterno (*):</label>
+                            <label for="apellidoPaterno" class="col-md-4 col-form-label text-md-end">Primer apellido (*):</label>
                             <div class="col-md-6">
                                 <input id="apellidoPaterno" type="text" class="form-control" name="apellidoPaterno" value="" required autocomplete="apellidoPaterno">
                             </div>
                         </div>
                         <!--Apellido Materno-->
                         <div class="row mb-3">
-                            <label for="apellidoMaterno" class="col-md-4 col-form-label text-md-end">Apellido Materno (*):</label>
+                            <label for="apellidoMaterno" class="col-md-4 col-form-label text-md-end">Segundo apellido (*):</label>
 
                             <div class="col-md-6">
                                 <input id="apellidoMaterno" type="text" class="form-control" name="apellidoMaterno" value="" required autocomplete="apellidoMaterno" autofocus>
@@ -96,8 +96,8 @@
 
                             <div class="col-md-6">
                                 <input id="correo" type="email" class="form-control" name="email" value="" required autocomplete="email">
-                                <span id="errorCorreo" style="display:none;color:red;"><small>Formato de correo inválido</small></span>
-                                <span id="successCorreo" style="display:none;color:green;"><small>Correo válido</small></span>
+                                <span id="errorCorreo" style="display:none;color:red;"><small><small>Formato de correo inválido</small></small></span>
+                                <span id="successCorreo" style="display:none;color:green;"><small><small>Correo válido</small></small></span>
                             </div>
                         </div>
                         <!--Confirmar correo-->
@@ -106,9 +106,9 @@
 
                             <div class="col-md-6">
                                 <input id="confirmCorreo" type="confirmEmail" class="form-control" value="" required autocomplete="email">
-                                <span id="errorCorreoC" style="display:none;color:red;"><small>Formato de correo inválido en la confirmación</small></span>
-                                <span id="errorConfirm" style="display:none;color:red;"><small>El correo no coincide, verifique.</small></span>
-                                <span id="successConfirm" style="display:none;color:green;"><small>Los correos coinciden</small></span>
+                                <span id="errorCorreoC" style="display:none;color:red;"><small><small>Formato de correo inválido en la confirmación</small></small></span>
+                                <span id="errorConfirm" style="display:none;color:red;"><small><small>El correo no coincide, verifique.</small></small></span>
+                                <span id="successConfirm" style="display:none;color:green;"><small><small>Los correos coinciden</small></small></span>
                             </div>
                         </div>
                         <!--Telefono-->
@@ -120,7 +120,7 @@
                                 value="" required autocomplete="telefono">
                             </div>
                         </div>
-                        <!--Celular-->
+                        <!--Celular-->  
                         <div class="row mb-3">
                             <label for="celular" class="col-md-4 col-form-label text-md-end">Celular (*):</label>
 
@@ -129,12 +129,13 @@
                                 name="celular" value="" required autocomplete="celular">
                             </div>
                         </div>
-                        <!--Contraseña-->
+                        <!--Contraseña--> 
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">Contraseña (*):</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control" name="password" required autocomplete="new-password">
+                                <small><small><span id="passstrength"></span></small></small>
                             </div>
                         </div>
                         <!--Confirmar Contraseña-->
@@ -159,6 +160,10 @@
                         <br/>
                         <br/>
                         <!--------------------------------Datos de facturacion---------------------->
+                        <div class="salto" hidden>
+                            <div class="marco" id="marco">Datos de Facturación</div>
+                            </br>
+                        </div>
                         <!--Tipo de persona--->
                         <div class="row mb-3 " id="tipoPersona" hidden>
                             <label for="tipoPersona" class="col-md-4 col-form-label text-md-end">Tipo de persona (*):</label>
@@ -190,7 +195,7 @@
 
                         <!--Apellido Paterno FACTURACION-->
                         <div class="row mb-3" id="apellidoPaternoFac" hidden>
-                            <label for="apellidoPaterno" class="col-md-4 col-form-label text-md-end">Apellido Paterno (*):</label>
+                            <label for="apellidoPaterno" class="col-md-4 col-form-label text-md-end">Primer apellido(*):</label>
                             <div class="col-md-6">
                                 <input  type="text" class="form-control" name="apellidoPaterno" value="" required >
                             </div>
@@ -198,7 +203,7 @@
 
                         <!--Apellido Materno FACTURACION-->
                         <div class="row mb-3" id="apellidoMaternoFac" hidden>
-                            <label for="apellidoMaternoFac" class="col-md-4 col-form-label text-md-end">Apellido Materno (*):</label>
+                            <label for="apellidoMaternoFac" class="col-md-4 col-form-label text-md-end">Segundo apellido (*):</label>
 
                             <div class="col-md-6">
                                 <input  type="text" class="form-control" name="apellidoMaterno" value="" required autocomplete="apellidoMaterno" autofocus>
@@ -334,16 +339,16 @@
                         <!--Captcha-->
                         <div class="col-mb-3 text-md-center">
                             <div class="col-md-6">
-                                <button class="btn btn-secondary" id="btnCaptcha">
+                                <button class="btn btn-outline-secondary" id="btnCaptcha">
                                     <input type="checkbox" id="captcha">
-                                    <b>No soy un robot</b> 
+                                    <b>No soy un robot </b> 
                                 </button>
                             </div> 
                             <br/>
                             
                         </div>
 
-                        <!--Suma-->
+                        <!--Suma--> 
                         <div class="row mb-3" id="suma" hidden>
                             
                             <label class="col-md-4 col-form-label text-md-end" id="operacion" value=""></label>
@@ -353,17 +358,17 @@
                                 <span id="resultIncorrecto" style="display:none;color:red;"> Incorrecto, verifique </span>
                             </div>
                             <div class="col-md-3">
-                                <button class="btn btn-light" type="checkbox" id="refrescar">Refrescar</button>
+                                <button class="btn btn-outline-primary" type="checkbox" id="refrescar">Refrescar <i class='fa fa-refresh'></i></button>
                             </div>
                             
                         </div>
                         <br/>
-
+ 
                         <!--Boton de Envío-->
                         <div class="col-mb-3 text-md-center">
                             <div class="col-md-12">
                                 <button type="submit" class="btn btn-primary">
-                                    Registrarse
+                                    Registrarse <small><i class="fa fa-user-plus"></i></small>
                                 </button>
                             </div> 
                         </div>
@@ -374,10 +379,28 @@
                 </div>
 
             </div>
+        </div>        
+        <div class="footer">
+            <p style="background-color: Gainsboro;"><small><small>
+                Hecho en México © Todos los derechos reservados 2022. Universidad Nacional Autónoma de México (UNAM), Dirección General de Incorporación y Revalidación de Estudios (DGIRE). Esta página puede ser reproducida con fines no lucrativos, siempre y cuando no se mutile, se cite la fuente completa y su dirección electrónica. De otra forma requiere permiso previo por escrito de la institución. Sitio web administrado por la DGIRE.
+                </small>
+                </small>
+            </p>
         </div>
+
 <?php
     include 'cdnScript.php';
 ?>
+    <script id="rendered-js">
+    $(document).ready(function ($) {
+        $('#myPassword').strength({
+        strengthClass: 'strength',
+        strengthMeterClass: 'strength_meter',
+        strengthButtonClass: 'button_strength',
+        strengthButtonText: 'Mostrar Password',
+        strengthButtonTextToggle: 'Ocultar Password' });
+    });
+    </script>
     <script type="text/javascript" src="js/registro.js"></script> 
 <?php
     include 'pie.php';

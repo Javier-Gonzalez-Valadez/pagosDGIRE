@@ -1,19 +1,49 @@
 <?php 
     include '../cabecera.php';
 ?>
+<link rel="stylesheet" href="../css/recuperar_contrasenia.css">
+<?php 
+    include '../cabecera2.php';
+?>
 
-
- <div class="contanier w-10">
+        <div class="row banner"> 
+            <div class="col-2 col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                <a href="https://www.unam.mx/" target=_BLANK> 
+                    <img class=""src="../imgs/unam_white.png" id="imgUnam"alt=""> 
+                </a>
+            </div>
+            <div class="col-4 col-lg-5 col-md-5 col-sm-4 col-xs-4">
+                <a href="https://www.unam.mx/" style="text-decoration:none;" target=_BLANK>
+                    <h4  class=" hidden-sm hidden-xs" id="txtUnam" style="color:white;">Universidad Nacional Autónoma de México</h4>
+                    <h4  class=" hidden-md hidden-lg" id="txtUnam" style="color:white;">UNAM</h4>
+                </a>
+            </div>
+            <div class="col-4 col-lg-5 col-md-5 col-sm-4 col-xs-4">
+                <a href="https://www.dgire.unam.mx/webdgire/" style="text-decoration:none;" target=_BLANK>
+                    <h4 class=" hidden-sm hidden-xs" id="txtDgire">Dirección General de Incorporación y Revalidación de Estudios</h4>
+                    <h4 class=" hidden-md hidden-lg" id="txtDgire">DGIRE</h4> 
+                </a>
+            </div>
+            <div class="col-2 col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                <a href="https://www.dgire.unam.mx/webdgire/" target="_BLANK">
+                    <img class="" src="../imgs/dgire_white.png" id="imgDgire" alt=""> 
+                </a>
+            </div>
+            <div class="row bannerPagos">
+                    <div class="col-12 col-lg col-md-12 col-sm-12 col-xs-12 txtPagos"><p>Recuperación de contraseña SISPA</p></div>
+            </div>
+        </div>
+        </br>
     <div class="row">
             <div class="col-md-2"></div>
 
-            <div class="col-md-8">
+            <div class="col-md-8"> 
                 <div class="card">
-
-                    <img src="../imgs/BannerDGIRE.png" class="card-img-top w-100" alt="Title">
                     <div class="card-body">
-                        <h5  class="card-title" style="color:blue;">Solcitar recuperación de Contraseña</h5> 
-                        <p><small><b>Para recuperar su contraseña es necesario que escriba el correo electrónico capturado en el sistema y responder el mecanismo de seguridad del captcha.</b></small></p>
+                        <div class="" style="display:block;text-align:center;">
+                            <i class="logoRecoveryPass fa fa-key" id="" ></i> 
+                        </div>
+                        <p style="text-align:center;"><small><b>Para recuperar su contraseña es necesario que escriba el correo electrónico capturado en el sistema y responder el mecanismo de seguridad del captcha.</b></small></p>
                         <p class="card-text"></p>
                         <form action="" class="card-text">
                             <!------------------------------Correo Electronico-------------------------->
@@ -33,7 +63,7 @@
                             <!------------------------------Boton Captcha-------------------------->
                             <div class="row mb-3">
                                 <div class="col-md-4 text-md-end">
-                                    <button class="btn btn-secondary col-md-8" id="botonEnvolvente">
+                                    <button class="btn btn-outline-secondary col-md-8" id="botonEnvolvente">
                                         <input type="checkbox" id="captchaCheck">
                                         No soy un robot
                                     </button>
@@ -44,8 +74,8 @@
                                 <label class="col-form-label col-md-4 text-md-end" id="suma" ></label>
                                 <div class="col-md-6">
                                     <input type="text"  class="form-control w-50" id="result" style="display:inline-block;">
-                                    <button id="refrescar" type="text" class="btn btn-secondary mb-1 text-md-start">
-                                         Refrescar
+                                    <button id="refrescar" type="text" class="btn btn btn-outline-info btn-sm mb-1 text-md-start">
+                                         Refrescar <i class='fa fa-refresh'></i>
                                     </button>
                                     <div class="div"></div>
                                     <span id="resultCorrecto"  style="display:none;color:green;"> Correcto</span>
@@ -102,22 +132,30 @@
                         <!--------------------------Boton Envio--------------------------------->
                         <div class="row">
                                 <div class="col-md-12 text-md-center">
-                                    <button class="btn btn-primary" id="enviar">Enviar</a>
+                                    <button class="btn btn-primary" id="enviar">Enviar <small><small><small><i class="fa fa-paper-plane"></i></small></small></small></a>
                                 </div>
                             </div>
                     
                     </div>
-                    <img src="../imgs/Footer.png" class="card-img-footer w-100" alt="">
                     
                 </div>
             </div>
 
             <div class="col-md-2"></div>
+
     </div>
- </div>
-    <?php
-        include '../cdnScript.php';
-    ?>
+</br>
+    <div class="footer">
+            <p style="background-color: Gainsboro;"><small><small>
+                Hecho en México © Todos los derechos reservados 2022. Universidad Nacional Autónoma de México (UNAM), Dirección General de Incorporación y Revalidación de Estudios (DGIRE). Esta página puede ser reproducida con fines no lucrativos, siempre y cuando no se mutile, se cite la fuente completa y su dirección electrónica. De otra forma requiere permiso previo por escrito de la institución. Sitio web administrado por la DGIRE.
+                </small>
+                </small>
+            </p>
+        </div>
+
+<?php
+    include '../cdnScript.php';
+?>
     <script type="text/javascript" src="../js/recuperarContra.js"></script> 
 <?php
     include '../pie.php';

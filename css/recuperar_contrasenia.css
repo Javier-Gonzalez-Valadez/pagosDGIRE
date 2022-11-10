@@ -9,7 +9,7 @@
     align-items: center;
 }
 .color{
-    color: midnightblue;
+    color: midnightblue; 
 }
 
 #imgUnam:hover{
@@ -44,29 +44,12 @@
     font-size: 26px;
 }
 
-.danger{ 
-    color: red;
-}
-
-.alert{ 
-    color: yellow;
-}
-
-.ok{ 
-    color: greenyellow; 
-}
-
-.marco{
-    text-align:center; 
-    outline:1.5px dashed rgb(0, 102, 255);
-    border-radius: 5%; 
-    background-color: midnightblue;
-    color: white;
-}
-
-.footer{
-    margin-top: 0.5em;
-    text-align: center;
+.logoRecoveryPass{
+    font-size: 2em;
+    outline:3px solid rgb(94, 93, 93); 
+    border-radius:50%;
+    padding:5px;
+    color: rgb(94, 93, 93);
 }
 
 /*DGIRE Y UNAM*/

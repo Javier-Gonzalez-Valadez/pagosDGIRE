@@ -20,6 +20,8 @@ $(document).ready(function(){
     $('#facturacion').on('change', function(){
         
         if(  $(this).is(':checked')  ){
+            $('.salto').attr('hidden', false);
+            $('#marco').attr('hidden', false);
             $('#tipoPersona').attr('hidden',false);
             $('#RFC').attr('hidden',false);
             //$('#nombreFac').attr('hidden',false);
@@ -46,6 +48,8 @@ $(document).ready(function(){
                 }
             });
         }else{
+            $('.salto').attr('hidden', true);
+            $('#marco').attr('hidden', true);
             $('#tipoPersona').attr('hidden',true);
             $('#RFC').attr('hidden',true);
             $('#nombreFac').attr('hidden',true);
@@ -120,8 +124,8 @@ $(document).ready(function(){
         var validar =/([A-Z0-9a-z_-][^@])+?@[^$#<>?]+?\.[\w]{2,4}/.test(this.value);
         var longitudCorreo = $('#correo').val().length;
         if(!validar){
-            $('#errorCorreoC').show(); 
-            $('#successConfirm').hide(); 
+            $('#errorCorreoC').show();
+            $('#successConfirm').hide();
             $('#errorConfirm').hide();
         }else{  
             
@@ -152,7 +156,8 @@ $(document).ready(function(){
     $('#celular').on('input', function () { 
         this.value = this.value.replace(/[^0-9]/g,'');
     });
-    //------------------CAPTCHA--------------------
+    
+    //---------------------------------------CAPTCHA---------------------------------------------
     
     let haEscrito = false;
     let primerValor = random(1,100);
@@ -228,6 +233,37 @@ $(document).ready(function(){
             
         });
     });
+});
+
+//---------------------------------VERIFICAR CONTRASEÑA--------------------------------------
+$('#password').keyup(function(e) {
+    var strongRegex = new RegExp("^(?=.{10,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+    var mediumRegex = new RegExp("^(?=.{9,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+    var enoughRegex = new RegExp("(?=.{8,}).*", "g");
+    if ( enoughRegex.test($(this).val()) == false) {
+            $('#passstrength').removeClass('text-success');
+            $('#passstrength').removeClass('text-warning');
+            $('#passstrength').removeClass('text-danger');
+            $('#passstrength').addClass('text-primary');
+            $('#passstrength').html('Al menos 8 caracteres.');
+    } else if (strongRegex.test($(this).val())) {
+            $('#passstrength').removeClass('text-warning');
+            $('#passstrength').removeClass('text-danger');
+            $('#passstrength').addClass('text-success');
+            $('#passstrength').html('Fuerte');
+    } else if (mediumRegex.test($(this).val())) {
+            $('#passstrength').removeClass('text-success');
+            $('#passstrength').removeClass('text-danger');
+            $('#passstrength').addClass('text-warning'); 
+            $('#passstrength').html('Media');
+    } else {
+            $('#passstrength').removeClass('text-success');
+            $('#passstrength').removeClass('text-alert');
+            $('#passstrength').addClass('text-danger'); 
+            $('#passstrength').html('Débil');
+    }
+    return true;
+
 });
 
 //-------------------------Terminos y condiciones----------------------------

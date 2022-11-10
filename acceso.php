@@ -135,6 +135,9 @@
                             </div>
                         </div>
                     </div>
+
+                    </br>
+                    
                  
                 
                 
@@ -143,6 +146,13 @@
 
         </div>
     </div>
+    <div class="footer">
+            <p style="background-color: Gainsboro;"><small><small>
+                Hecho en México © Todos los derechos reservados 2022. Universidad Nacional Autónoma de México (UNAM), Dirección General de Incorporación y Revalidación de Estudios (DGIRE). Esta página puede ser reproducida con fines no lucrativos, siempre y cuando no se mutile, se cite la fuente completa y su dirección electrónica. De otra forma requiere permiso previo por escrito de la institución. Sitio web administrado por la DGIRE.
+                </small>
+                </small>
+            </p>
+        </div>
 
 <?php include 'cdnScript.php';?>
 <script src="js/login.js"></script>  
