@@ -78,6 +78,18 @@
     background-color: midnightblue;
 }
 
+.footer{
+    margin-top: 0.5em;
+    text-align: center;
+    
+}
+
+.textoFooter{
+    padding-left: 4vh; 
+    padding-right: 4vh;
+    font-size: 0.75em;
+}
+
 /*DGIRE Y UNAM*/
 @media (min-width: 1001px){
     .hidden-lg, .hidden-md{

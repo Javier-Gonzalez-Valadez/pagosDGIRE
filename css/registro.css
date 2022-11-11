@@ -72,6 +72,13 @@
 .footer{
     margin-top: 0.5em;
     text-align: center;
+    
+}
+
+.textoFooter{
+    padding-left: 4vh; 
+    padding-right: 4vh;
+    font-size: 0.75em;
 }
 
 /*DGIRE Y UNAM*/

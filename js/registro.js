@@ -270,6 +270,12 @@ $('#password').keyup(function(e) {
 $('#tyc').on('change', function(e){
 
     if(e.target.checked){
+        console.log("ENtramoooooos");
+        $('#redirectAviso').on('click', function(){
+            window.open("https://apps.dgire.unam.mx/avisos/"); 
+
+        }); 
+        $('#redirectAviso').trigger("click");
         $('.tycModal').show();
         $('#cerrarModal').trigger("click");
         $('.tycModal').show();
@@ -277,6 +283,7 @@ $('#tyc').on('change', function(e){
             $('.tycModal').hide();
 
         });
+        
     }else{
         $('.tycModal').hide();
     }

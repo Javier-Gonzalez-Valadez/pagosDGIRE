@@ -318,12 +318,14 @@
                             </div>
                         </div>
 
-                                             
+                        
                         <!--Terminos y Condiciones-->
-                        <div class="row">
+                        <div class="row"> 
                             <div class="col-md-2"></div>
                             <div class="col-md-9">
+                                
                                 <div class="col-md-12">
+                                <a hidden href="https://apps.dgire.unam.mx/avisos/" id="redirectAviso" target="_blank"></a>  
                                     <label class="" style="display: inline-block;">
                                         Confirme que usted acepta los Terminos y Condiciones del Aviso de Privacidad (*)</label>
                                     <input type="checkbox" id="tyc" data-toggle="modal" data-target="#tycModal" style="display: inline-block; margin-left:5px">
@@ -379,12 +381,22 @@
                 </div>
 
             </div>
-        </div>        
+        </div>   
+        <div class="row">
+            <div class="col-md-2 text-md-end">
+            </div>
+            <div class="col-md-8 text-md-start">
+                <a href="acceso.php" class="btn btn-outline-primary btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i>  Regresar </a>
+
+            </div>
+            <div class="col-md-2 text-md-end">
+            </div>
+
+        </div>     
         <div class="footer">
-            <p style="background-color: Gainsboro;"><small><small>
+            <p class="textoFooter" style="background-color: Gainsboro;">
                 Hecho en México © Todos los derechos reservados 2022. Universidad Nacional Autónoma de México (UNAM), Dirección General de Incorporación y Revalidación de Estudios (DGIRE). Esta página puede ser reproducida con fines no lucrativos, siempre y cuando no se mutile, se cite la fuente completa y su dirección electrónica. De otra forma requiere permiso previo por escrito de la institución. Sitio web administrado por la DGIRE.
-                </small>
-                </small>
+                
             </p>
         </div>
 

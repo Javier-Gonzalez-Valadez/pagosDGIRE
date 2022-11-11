@@ -130,15 +130,20 @@
                         </div>
                         
                         <!-----------------------IFRAME----------------------------> 
-                        <iframe src="https://apps.dgire.unam.mx/embed?/avisos/"  name="iframe_aviso" title="Iframe Example" style="border:2px solid red;"></iframe>-->
-<iframe hidden src="https://www.google.com/maps/embed?pb=!4v1668192381695!6m8!1m7!1spbOuNKdA9fSDtMl-0JzNDg!2m2!1d19.31173586075709!2d-99.18429103841581!3f179.6629908073546!4f-6.12880220303461!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            <!--------------------Aviso de Privacidad------------------->
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                                <iframe hidden src="https://apps.dgire.unam.mx/embed?/avisos/" class="w-100" name="iframe_aviso" title="Iframe Example" style="border:2px solid red;"></iframe>
+                                <iframe hidden class="w-100" style="height: 50vh;" src="https://www.google.com/maps/embed?pb=!4v1668192381695!6m8!1m7!1spbOuNKdA9fSDtMl-0JzNDg!2m2!1d19.31173586075709!2d-99.18429103841581!3f179.6629908073546!4f-6.12880220303461!5f0.7820865974627469" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
                         <!--------------------Aviso de Privacidad------------------->
                         <div class="container">
                         <div class="row">
                             <div class="col-md-12" style="text-align:center;">
-                                <p><small><a href="https://apps.dgire.unam.mx/avisos/" target="" id="aviso" class="color" style="cursor:pointer;"><u>Aviso de Privacidad</u></a></small></p>
+                                <p><small><a href="https://apps.dgire.unam.mx/avisos/" target="_blank" id="aviso" class="color" style="cursor:pointer;"><u>Aviso de Privacidad</u></a></small></p>
                             </div>
                         </div>
                     </div>
@@ -151,12 +156,10 @@
         </div>
     </div>
     <div class="footer">
-            <p style="background-color: Gainsboro;"><small><small>
+            <p class="textoFooter" style="background-color: Gainsboro;"> 
                 Hecho en México © Todos los derechos reservados 2022. Universidad Nacional Autónoma de México (UNAM), Dirección General de Incorporación y Revalidación de Estudios (DGIRE). Esta página puede ser reproducida con fines no lucrativos, siempre y cuando no se mutile, se cite la fuente completa y su dirección electrónica. De otra forma requiere permiso previo por escrito de la institución. Sitio web administrado por la DGIRE.
-                </small>
-                </small>
             </p>
-        </div>
+        </div> 
 
 <?php include 'cdnScript.php';?>
 <script src="js/login.js"></script>  
