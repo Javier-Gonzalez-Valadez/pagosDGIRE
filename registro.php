@@ -338,7 +338,7 @@
                         
                         <!--Captcha-->
                         <div class="col-mb-3 text-md-center">
-                            <div class="col-md-6">
+                            <div class="col-md-12" style="text-align:center;display:block;">
                                 <button class="btn btn-outline-secondary" id="btnCaptcha">
                                     <input type="checkbox" id="captcha">
                                     <b>No soy un robot </b> 
@@ -366,8 +366,8 @@
  
                         <!--Boton de Envío-->
                         <div class="col-mb-3 text-md-center">
-                            <div class="col-md-12">
-                                <button type="submit" class="btn btn-primary">
+                            <div class="text-md-center d-grid gap-2 col-4 mx-auto"">
+                                <button type="submit" class="btn" id="registrarse">
                                     Registrarse <small><i class="fa fa-user-plus"></i></small>
                                 </button>
                             </div> 

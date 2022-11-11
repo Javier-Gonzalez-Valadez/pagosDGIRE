@@ -62,12 +62,13 @@
                             </div>
                             <!------------------------------Boton Captcha-------------------------->
                             <div class="row mb-3">
-                                <div class="col-md-4 text-md-end">
-                                    <button class="btn btn-outline-secondary col-md-8" id="botonEnvolvente">
-                                        <input type="checkbox" id="captchaCheck">
-                                        No soy un robot
-                                    </button>
-                                </div>
+                                
+                                    <div class="" style="text-align:center;">
+                                        <button class="btn btn-outline-secondary btn-sm" id="botonEnvolvente">
+                                            <input type="checkbox" id="captchaCheck">
+                                            No soy un robot
+                                        </button>
+                                    </div>
                             </div>
                             <!-----------------------------Captcha suma--------------------------->
                             <div class="row" id="bloqueSuma" hidden>
@@ -88,18 +89,17 @@
                             <div class="modal modalConfirmacion" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Confirmar</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <div class="modal-header" style="text-align:center; display:block;">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel" style="color:midnightblue;">Confirmar</h1>
                                 </div>
-                                <div class="modal-body">    
+                                <div class="modal-body" style="text-align:center;">    
                                     <p>Será enviado la solicitud con la siguiente información.</p>
                                     <p>Si está de acuerdo presionar <b>Registrar</b>.<p>
                                     <p>Para realizar alguna corrección seleccionar <b>Cancelar</b>.</p>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary" id="registrarCambio" >Registrar</button>
-                                    <button type="button" class="btn btn-secondary" id="cancelarModal" data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn" id="registrarCambio" >Registrar</button>
+                                    <button type="button" class="btn" id="cancelarModal" data-bs-dismiss="modal">Cancelar</button>
                                 </div>
                                 </div>
                             </div>
@@ -109,9 +109,9 @@
                             <div class="modal modalOkFinal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Continuar</h1>
-                                    <button type="button" class="btn-close" id="btnCerrarModal" autofocus data-bs-dismiss="modal" aria-label="Close"></button>
+                                <div class="modal-header"style="text-align:center; display:block;">
+                               
+                                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Continuar</h1>
                                 </div>
                                 <div class="modal-body">    
                                     <p>Se ha enviado un correo a javiergonzalez01@aragon.unam.mx
@@ -131,8 +131,9 @@
                         </br>
                         <!--------------------------Boton Envio--------------------------------->
                         <div class="row">
-                                <div class="col-md-12 text-md-center">
-                                    <button class="btn btn-primary" id="enviar">Enviar <small><small><small><i class="fa fa-paper-plane"></i></small></small></small></a>
+                                <div class="text-md-center d-grid gap-2 col-4 mx-auto">
+                                    <button class="btn btn-primary" id="enviar">
+                                        Enviar <small><small><small><i class="fa fa-paper-plane"></i></small></small></small></a>
                                 </div>
                             </div>
                     

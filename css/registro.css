@@ -61,6 +61,11 @@
     outline:1.5px dashed rgb(0, 102, 255);
     border-radius: 5%; 
     background-color: midnightblue;
+    color: white; 
+}
+
+#registrarse{
+    background-color: midnightblue;
     color: white;
 }
 

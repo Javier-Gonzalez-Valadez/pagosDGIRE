@@ -6,7 +6,7 @@
                         <a href="https://www.unam.mx/" target=_BLANK> 
                             <img class=""src="imgs/unam_white.png" id="imgUnam"alt=""> 
                         </a>
-                    </div>
+                    </div> 
                     <div class="col-4 col-lg-5 col-md-5 col-sm-4 col-xs-4">
                         <a href="https://www.unam.mx/" style="text-decoration:none;" target=_BLANK>
                             <h4  class=" hidden-sm hidden-xs" id="txtUnam" style="color:white;">Universidad Nacional Autónoma de México</h4>
@@ -86,13 +86,12 @@
                                                 </div>
                                                 <!--Captcha-->
                                                 <div class="col-mb-3 text-md-center">
-                                                    <div class="col-md-6">
-                                                        <button class="btn btn-outline-secondary" id="btnCaptcha">
-                                                            <input type="checkbox" id="captcha">
-                                                            <b>No soy un robot</b> 
+                                                    <div class="" style="text-align:center;">
+                                                        <button class="btn btn-outline-secondary btn-sm" id="botonEnvolvente">
+                                                            <input type="checkbox" id="captchaCheck">
+                                                            No soy un robot
                                                         </button>
-                                                    </div> 
-                                                    <br/>
+                                                    </div>
                                                     
                                                 </div>
 
@@ -112,7 +111,10 @@
                                                 </div>
                                                 <br/>
                                                 </br>
-                                                <button class="btn btn-primary" > Iniciar Sesión <i class='fa fa-unlock'></i></button>
+                                                <div class="text-md-center d-grid gap-2 col-6 mx-auto">
+                                                    <button class="btn btn-primary" > Iniciar Sesión <i class='fa fa-unlock'></i></button>
+                                                </div> 
+                                                
                                                 
                                             </form>
                                             <hr>
@@ -127,20 +129,22 @@
                             <b><hr></b>
                         </div>
                         
+                        <!-----------------------IFRAME----------------------------> 
+                        <iframe src="https://apps.dgire.unam.mx/embed?/avisos/"  name="iframe_aviso" title="Iframe Example" style="border:2px solid red;"></iframe>-->
+<iframe hidden src="https://www.google.com/maps/embed?pb=!4v1668192381695!6m8!1m7!1spbOuNKdA9fSDtMl-0JzNDg!2m2!1d19.31173586075709!2d-99.18429103841581!3f179.6629908073546!4f-6.12880220303461!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <!--------------------Aviso de Privacidad------------------->
+
                         <!--------------------Aviso de Privacidad------------------->
                         <div class="container">
                         <div class="row">
                             <div class="col-md-12" style="text-align:center;">
-                                <p><small><b> </b><a class="abrirModal" id="abrirModal" class="color" style="cursor:pointer;"><u>Aviso de Privacidad</u></a></small></p>
+                                <p><small><a href="https://apps.dgire.unam.mx/avisos/" target="" id="aviso" class="color" style="cursor:pointer;"><u>Aviso de Privacidad</u></a></small></p>
                             </div>
                         </div>
                     </div>
 
                     </br>
                     
-                 
-                
-                
             </div>
 
 

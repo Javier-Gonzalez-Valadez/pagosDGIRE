@@ -49,13 +49,13 @@
                         <small>
                         <p><b>Nota: Si no recibe el correo favor de revisar su bandeja de correos no deseados o de ser necesario es posible contactarnos a los correos</b> <a href="">pagosdgire@dgire.unam.mx</a> o <a href="">sistemas@dgire.unam.mx</a></p>
                         </small>
-                        <!--------------------------Boton Salir--------------------------------->
+                        <!--------------------------Boton Salir---------------------------------> 
                         <!---------------------Redirecciona a Login----------------------------->
                         <hr>
                         
                         <div class="row">
                                 <div class="col-md-12 text-md-center">
-                                    <a href="../acceso.php" class="btn btn-primary" id="enviar">Salir</a>
+                                    <a href="../acceso.php" class="btn btn-primary" id="enviar">Salir <small><i class="fa fa-sign-out" aria-hidden="true"></i></small></a>
                                 </div>
                         </div>
                         </br>

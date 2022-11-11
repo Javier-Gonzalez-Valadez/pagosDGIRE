@@ -52,6 +52,32 @@
     color: rgb(94, 93, 93);
 }
 
+#botonEnvolvente{
+    display: inline-block; 
+
+}
+
+#enviar{
+    background-color: midnightblue;
+}
+
+#registrarCambio{
+    background-color: midnightblue;
+    color: white;
+}
+#staticBackdropLabel{
+    color: midnightblue;
+}
+
+#cancelarModal{
+    background-color: goldenrod;
+    color: white;
+}
+
+#terminar{
+    background-color: midnightblue;
+}
+
 /*DGIRE Y UNAM*/
 @media (min-width: 1001px){
     .hidden-lg, .hidden-md{
