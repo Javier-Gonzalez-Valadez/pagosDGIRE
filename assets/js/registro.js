@@ -268,24 +268,14 @@ $('#password').keyup(function(e) {
 
 //-------------------------Terminos y condiciones----------------------------
 $('#tyc').on('change', function(e){
-
+ 
     if(e.target.checked){
         console.log("ENtramoooooos");
-        $('#redirectAviso').on('click', function(){
-            window.open("https://apps.dgire.unam.mx/avisos/"); 
-
-        }); 
-        $('#redirectAviso').trigger("click");
-        $('.tycModal').show();
-        $('#cerrarModal').trigger("click");
-        $('.tycModal').show();
-        $('#cerrarModal').on('click', function(){
-            $('.tycModal').hide();
-
-        });
+        $('#staticBackdrop').modal("show"); 
+        
         
     }else{
-        $('.tycModal').hide();
+        $('#staticBackdrop').modal("hide");
     }
         
 });

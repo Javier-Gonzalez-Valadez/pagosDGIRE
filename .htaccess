@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+Options -Indexes 
+
+RewriteEngine On
+
+ErrorDocument 404 http://localhost/pagosDGIRE/error/index
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+RewriteRule ^(.*)/(.*) index.php?controller=$1&action=$2 
+
+</IfModule>
+
+
+
+

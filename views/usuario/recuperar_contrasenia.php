@@ -1,38 +1,6 @@
-<?php 
-    include '../cabecera.php';
-?>
-<link rel="stylesheet" href="../css/recuperar_contrasenia.css">
-<?php 
-    include '../cabecera2.php';
-?>
 
-        <div class="row banner"> 
-            <div class="col-2 col-lg-1 col-md-1 col-sm-2 col-xs-2">
-                <a href="https://www.unam.mx/" target=_BLANK> 
-                    <img class=""src="../imgs/unam_white.png" id="imgUnam"alt=""> 
-                </a>
-            </div>
-            <div class="col-4 col-lg-5 col-md-5 col-sm-4 col-xs-4">
-                <a href="https://www.unam.mx/" style="text-decoration:none;" target=_BLANK>
-                    <h4  class=" hidden-sm hidden-xs" id="txtUnam" style="color:white;">Universidad Nacional Autónoma de México</h4>
-                    <h4  class=" hidden-md hidden-lg" id="txtUnam" style="color:white;">UNAM</h4>
-                </a>
-            </div>
-            <div class="col-4 col-lg-5 col-md-5 col-sm-4 col-xs-4">
-                <a href="https://www.dgire.unam.mx/webdgire/" style="text-decoration:none;" target=_BLANK>
-                    <h4 class=" hidden-sm hidden-xs" id="txtDgire">Dirección General de Incorporación y Revalidación de Estudios</h4>
-                    <h4 class=" hidden-md hidden-lg" id="txtDgire">DGIRE</h4> 
-                </a>
-            </div>
-            <div class="col-2 col-lg-1 col-md-1 col-sm-2 col-xs-2">
-                <a href="https://www.dgire.unam.mx/webdgire/" target="_BLANK">
-                    <img class="" src="../imgs/dgire_white.png" id="imgDgire" alt=""> 
-                </a>
-            </div>
-            <div class="row bannerPagos">
-                    <div class="col-12 col-lg col-md-12 col-sm-12 col-xs-12 txtPagos"><p>Recuperación de contraseña SISPA</p></div>
-            </div>
-        </div>
+<link rel="stylesheet" href="assets/css/recuperar_contrasenia.css">
+
         </br>
     <div class="row">
             <div class="col-md-2"></div>
@@ -118,7 +86,7 @@
                                     para la recuperación de la contraseña.</p>
                                 </div>
                                 <div class="modal-footer">
-                                    <a href="cedula.php" class="btn btn-primary" id="terminar" >Continuar</a>
+                                    <a href="cedula"   class="btn btn-primary" id="terminar" >Continuar</a>
             
 
                                 </div>
@@ -134,7 +102,7 @@
                                 <div class="text-md-center d-grid gap-2 col-4 mx-auto">
                                     <button class="btn btn-primary" id="enviar">
                                         Enviar <small><small><small><i class="fa fa-paper-plane"></i></small></small></small></a>
-                                </div>
+                                </div> 
                             </div>
                     
                     </div>
@@ -149,25 +117,13 @@
         <div class="col-md-2 text-md-end">
         </div>
         <div class="col-md-8 text-md-start">
-            <a href="../acceso.php" class="btn btn-outline-primary btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i>  Regresar </a>
+            <a href="index" class="btn btn-outline-primary btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i>  Regresar </a>
 
         </div>
-        <div class="col-md-2 text-md-end">
+        <div class="col-md-2 text-md-end"> 
         </div>
-
 
     </div>
 </br>
-    <div class="footer">
-            <p class="textoFooter" style="background-color: Gainsboro;">
-                Hecho en México © Todos los derechos reservados 2022. Universidad Nacional Autónoma de México (UNAM), Dirección General de Incorporación y Revalidación de Estudios (DGIRE). Esta página puede ser reproducida con fines no lucrativos, siempre y cuando no se mutile, se cite la fuente completa y su dirección electrónica. De otra forma requiere permiso previo por escrito de la institución. Sitio web administrado por la DGIRE.
-            </p>
-        </div> 
-
-<?php
-    include '../cdnScript.php';
-?>
-    <script type="text/javascript" src="../js/recuperarContra.js"></script> 
-<?php
-    include '../pie.php';
-?>
+     
+    <script type="text/javascript" src="assets/js/recuperarContra.js"></script> 

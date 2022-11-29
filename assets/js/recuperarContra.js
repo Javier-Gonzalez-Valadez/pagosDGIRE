@@ -4,7 +4,7 @@ $(document).ready(function(){
     let primerValor;
     let segundoValor;
     let haEscrito=false;
-    let resultado;
+    let resultado;  
 
     
     $('#captchaCheck').on('change', function(e){

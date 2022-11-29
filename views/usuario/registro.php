@@ -1,33 +1,6 @@
-<?php include 'cabecera.php';?>
-<link rel="stylesheet" href="css/registro.css">
-<?php include 'cabecera2.php';?>
-        <div class="row banner"> 
-            <div class="col-2 col-lg-1 col-md-1 col-sm-2 col-xs-2">
-                <a href="https://www.unam.mx/" target=_BLANK> 
-                    <img class=""src="imgs/unam_white.png" id="imgUnam"alt=""> 
-                </a>
-            </div>
-            <div class="col-4 col-lg-5 col-md-5 col-sm-4 col-xs-4">
-                <a href="https://www.unam.mx/" style="text-decoration:none;" target=_BLANK>
-                    <h4  class=" hidden-sm hidden-xs" id="txtUnam" style="color:white;">Universidad Nacional Autónoma de México</h4>
-                    <h4  class=" hidden-md hidden-lg" id="txtUnam" style="color:white;">UNAM</h4>
-                </a>
-            </div>
-            <div class="col-4 col-lg-5 col-md-5 col-sm-4 col-xs-4">
-                <a href="https://www.dgire.unam.mx/webdgire/" style="text-decoration:none;" target=_BLANK>
-                    <h4 class=" hidden-sm hidden-xs" id="txtDgire">Dirección General de Incorporación y Revalidación de Estudios</h4>
-                    <h4 class=" hidden-md hidden-lg" id="txtDgire">DGIRE</h4> 
-                </a>
-            </div>
-            <div class="col-2 col-lg-1 col-md-1 col-sm-2 col-xs-2">
-                <a href="https://www.dgire.unam.mx/webdgire/" target="_BLANK">
-                    <img class="" src="imgs/dgire_white.png" id="imgDgire" alt=""> 
-                </a>
-            </div>
-            <div class="row bannerPagos">
-                    <div class="col-12 col-lg col-md-12 col-sm-12 col-xs-12 txtPagos"><p>Registro a la Unidad Administrativa de Sistema de Pagos</p></div>
-            </div>
-        </div>
+
+<link rel="stylesheet" href="assets/css/registro.css"> 
+
         <div class="row" >
             <div class="col-md-2"></div>
             <!--Form del Register-->
@@ -309,13 +282,42 @@
                         </div>
                         
                         
-                        <!--Escriba su colonia-->
+                        <!--Escriba su colonia-->   
                         <div class="row mb-3" id="ponerColonia" hidden>
                             <label for="calleFac" class="col-md-4 col-form-label text-md-end">Ecriba su colonia(*):</label>
 
                             <div class="col-md-6">
                                 <input  type="text" class="form-control" name="ponColonia" value="" required >
                             </div>
+                        </div>
+
+                        <!-----------------------IFRAME----------------------------> 
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                                
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="5" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg" >
+                                        <div class="modal-content">
+                                        <div class="modal-header" style="display:block;text-align:center;color:midnightblue;"> 
+                                            <h1 class="modal-title fs-5" id="staticBackdropLabel" >Aviso de Privacidad</h1>
+                                        </div>
+                                        <div class="modal-body">
+                                            <iframe class="w-100"style="height:60vh;" src="https://www.dgire.unam.mx/webdgire/" frameborder="0"></iframe>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Acepto términos y condiciones</button>
+                                            
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
+
+
+                            <div class="col-md-2"></div> 
                         </div>
 
                         
@@ -328,14 +330,14 @@
                                 <a hidden href="https://apps.dgire.unam.mx/avisos/" id="redirectAviso" target="_blank"></a>  
                                     <label class="" style="display: inline-block;">
                                         Confirme que usted acepta los Terminos y Condiciones del Aviso de Privacidad (*)</label>
-                                    <input type="checkbox" id="tyc" data-toggle="modal" data-target="#tycModal" style="display: inline-block; margin-left:5px">
+                                    <input type="checkbox" id="tyc">
                                     
                                 </div>
                                 </br>
                             </div>             
                         </div>
                         <br/>
-                        <br/>
+                        <br/> 
 
                         
                         <!--Captcha-->
@@ -389,20 +391,11 @@
                 <a href="acceso.php" class="btn btn-outline-primary btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i>  Regresar </a>
 
             </div>
-            <div class="col-md-2 text-md-end">
+            <div class="col-md-2 text-md-end">  
             </div>
+                                                 
+        </div>      
 
-        </div>     
-        <div class="footer">
-            <p class="textoFooter" style="background-color: Gainsboro;">
-                Hecho en México © Todos los derechos reservados 2022. Universidad Nacional Autónoma de México (UNAM), Dirección General de Incorporación y Revalidación de Estudios (DGIRE). Esta página puede ser reproducida con fines no lucrativos, siempre y cuando no se mutile, se cite la fuente completa y su dirección electrónica. De otra forma requiere permiso previo por escrito de la institución. Sitio web administrado por la DGIRE.
-                
-            </p>
-        </div>
-
-<?php
-    include 'cdnScript.php';
-?>
     <script id="rendered-js">
     $(document).ready(function ($) {
         $('#myPassword').strength({
@@ -413,7 +406,4 @@
         strengthButtonTextToggle: 'Ocultar Password' });
     });
     </script>
-    <script type="text/javascript" src="js/registro.js"></script> 
-<?php
-    include 'pie.php';
-?> 
+    <script type="text/javascript" src="assets/js/registro.js"></script> 

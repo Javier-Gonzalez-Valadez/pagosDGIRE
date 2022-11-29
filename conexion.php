@@ -1,39 +1,40 @@
-<?php 
-    class Conexion{
+<?php
+    
+    class Conexion{ 
         
-        private $servidor    = '132.247.147.17';
-        private $usuario     = 'root';
-        private $contrasenia = '';
-        private $db          = 'pagos';
+        private $db_config ="mysql:host=localhost; dbname=prueba";  
+        private $usuario ="javi";
+        private $password = '123'; 
         private $conexion;
-
-        public function __construct(){
-            
-            try {
-                $this->conexion = new PDO("mysql:host= $this->servidor; dbname= $this->db", $this->usuario, $this->contrasenia);
-                $this->conexion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMDOE_EXCEPTION);
-            } catch (PDOException $e) {
-                return 'No se pudo conectar a la base de datos'.$e->getMessage();
+        //-------------------------CREDENCIALES MYSQL DEL SERVER------------------- 
+        /*private $db_config ="mysql:host=localhost; dbname=Mercurioz_pagos_v2020";  
+        private $usuario ="dba_mercurioz";
+        private $password = '#ME_dbz$pk24';
+        private $conexion;*/
+   
+        public function connect() 
+        {  
+            try{  
+                echo "Conectado satisfactoriamente";
+                $this->conexion = new PDO($this->db_config, $this->usuario, $this->password);
+                $this->conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                return $this->conexion; 
+            }catch(PDOException $e){
+                return "Falla de conexion".$e->getMessage();  
             }
-
-        }
-
-        public function ejecutar($query)//Insertar, ModifICAR, Borrar
-        {
-            $this->conexion->exec($query);
+        } 
+        
+        
+        public function ejecutar($sql){//Insertar, Actualizar, Borrar
+            $this->conexion->exec($sql);
             return $this->conexion->lastInsertId();
         }
 
-        public function consultar($query){
-
-            $sentencia = $this->conexion->prepare($query);
-            $sentencia -> execute();
-            return $sentencia -> fetchAll();
-            
+        public function consultar($sql){//Listar    
+            $sentencia=$this->conexion->prepare($sql);
+            $sentencia->execute();
+            return $sentencia->fetchAll(); 
         }
-
-
     }
-
 
 ?>
