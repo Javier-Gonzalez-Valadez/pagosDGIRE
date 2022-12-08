@@ -1,5 +1,5 @@
 
-<link rel="stylesheet" href="assets/css/recuperar_contrasenia.css">
+<link rel="stylesheet" href="../assets/css/recuperar_contrasenia.css">
 
         </br>
     <div class="row">
@@ -10,6 +10,11 @@
                     <div class="card-body">
                         <div class="" style="display:block;text-align:center;">
                             <i class="logoRecoveryPass fa fa-key" id="" ></i> 
+                        </div> 
+                        <br/>
+                        <div class="">
+                            <h5  class="card-title" style="text-align:center;">Recuperación de Contraseña</h5> 
+                            <hr style="size:80%;">
                         </div>
                         <p style="text-align:center;"><small><b>Para recuperar su contraseña es necesario que escriba el correo electrónico capturado en el sistema y responder el mecanismo de seguridad del captcha.</b></small></p>
                         <p class="card-text"></p>
@@ -126,4 +131,4 @@
     </div>
 </br>
      
-    <script type="text/javascript" src="assets/js/recuperarContra.js"></script> 
+    <script type="text/javascript" src="../assets/js/recuperarContra.js"></script> 

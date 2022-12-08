@@ -5,18 +5,46 @@ $(document).ready(function(){
             console.log("Entramos con "+perfil);  
             if(perfil == "Alumno" || perfil == 'Profesor'){
                 $('#cvePlantel').attr( 'hidden', false );
-                   $('#noExpdte').attr( 'hidden', false); 
+                $('#noExpdte').attr( 'hidden', false); 
+                $('#curp').attr('hidden', true);
             }
             if(perfil == "Director Tecnico"){
                 $('#cvePlantel').attr( 'hidden', false );
-                $('#noExpdte').attr( 'hidden', true );
+                $('#noExpdte').attr( 'hidden', false );
+                $('#curp').attr('hidden', true);
             }
             if(perfil == 'Publico en general'){
+                $('#curp').attr('hidden', false);
                 $('#cvePlantel').attr('hidden', true);
                 $('#noExpdte').attr('hidden', true);
+                //-----------------------------------Obtencion de CURP------------------------------
+                    $('#curptxt').on('keyup', function(){
+                        if($('#curptxt').val().length==18){
+                            var curpIngresado=$('#curptxt').val();
+                            console.log(curpIngresado); 
+                            $('#curpSuccess').attr('hidden', false); 
+                            $('#curpError').attr('hidden', true);
+                            $.ajax({
+                                type:"GET",
+                                url:"https://apps.dgire.unam.mx/intranet/APIsis/curp/$curpIngresado",
+                                success: function(data){
+                                    alert(JSON.stringify(data.results));  
+                                    for(let item of data.results){
+                                        $('#name').val(item.nombre);
+                                        $('#apellidoPaterno').val(item.primerApellido);
+                                        $('#apellidoMaterno').val(item.segundoApellido);  
+                                    }
+                                }
+                            });
+                        }else{
+                            $('#curpError').attr('hidden', false);
+                            $('#curpSuccess').attr('hidden', true);
+                        }
+
+                    });
             }
-    });
-    //------------------------FACTURACION----------------------
+    }); 
+    //-----------------------------------FACTURACION----------------------------------
     $('#facturacion').on('change', function(){
         
         if(  $(this).is(':checked')  ){
@@ -68,7 +96,29 @@ $(document).ready(function(){
             $('#ponerColonia').attr('hidden', true);
             $('#selecTipoPersona').val("Seleccione");
         }
-        
+        //-----------------------------------Obtencion de CURP------------------------------
+        $('#codigoPostal').on('keyup', function(){
+            if($('#codigoPostal').val().length==5){
+                var codigoIngresado=$('#codigoPostal').val();
+                $('#codigoSuccess').attr('hidden', false);
+                $('#codigoError').attr('hidden', true);
+                $.ajax({
+                    type:"GET",
+                    url:"https://apps.dgire.unam.mx/intranet/APIsis/curp/$curpIngresado",
+                    success: function(data){
+                        alert(JSON.stringify(data.results));  
+                        for(let item of data.results){
+                            $('#name').val(item.nombre);
+                            $('#apellidoPaterno').val(item.primerApellido);
+                            $('#apellidoMaterno').val(item.segundoApellido);
+                        }
+                    }
+                });
+            }else{
+                $('#codigoError').attr('hidden', false);
+                $('#codigoSuccess').attr('hidden', true);
+            }
+        });
     });
     //--------------TIPO DE PERSONA EN FACTURACION--------------- 
     $( '#selecTipoPersona').on('change', function() {
@@ -90,23 +140,21 @@ $(document).ready(function(){
                 $('#apellidoMaternoFac').attr('hidden',true);
                 $('#rsFac').attr('hidden',true);
             }
-        });
-    
+        }); 
     var correoValidado = false;
     var confirmacionCorreoValidada = false;
     //-----------------CORREO Y CONFIRMACION-------------------------
     $('#correo').on('keyup', function(){
         var validar =/([A-Z0-9a-z_-][^@])+?@[^$#<>?]+?\.[\w]{2,4}/.test(this.value);
-        if(!validar){
+        if(!validar){ 
             $('#errorCorreo').show();
-            $('#successCorreo').hide();
-
+            $('#successCorreo').hide();  
+ 
         }else{  
             correoValidado = true;
             $('#errorCorreo').hide();
             $('#successCorreo').show();
         }
-
         if(confirmacionCorreoValidada==true && ($('#confirmCorreo').val()!='') && ($('#correo').val()!=$('#confirmCorreo').val())){
                 $('#errorCorreoC').hide();
                 $('#successConfirm').hide();

@@ -4,7 +4,7 @@
         
         private $db_config ="mysql:host=localhost; dbname=prueba";  
         private $usuario ="javi";
-        private $password = '123'; 
+        private $password = '123';  
         private $conexion;
         //-------------------------CREDENCIALES MYSQL DEL SERVER------------------- 
         /*private $db_config ="mysql:host=localhost; dbname=Mercurioz_pagos_v2020";  
@@ -12,16 +12,18 @@
         private $password = '#ME_dbz$pk24';
         private $conexion;*/
    
-        public function connect() 
+        public static function connect() 
         {  
-            try{  
+            try{   
                 echo "Conectado satisfactoriamente";
-                $this->conexion = new PDO($this->db_config, $this->usuario, $this->password);
-                $this->conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                return $this->conexion; 
-            }catch(PDOException $e){
-                return "Falla de conexion".$e->getMessage();  
-            }
+               //$conexion = new PDO("mysql:host=localhost; port=54321 ;dbname=Mercurioz_pagos_v2020", "dba_mercurioz",'#ME_dbz$pk24');
+               $conexion = new PDO("mysql:host=localhost; dbname=prueba", "javi",'123');  
+               $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+               $conexion->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+               return $conexion; 
+           }catch(PDOException $e){
+               return "Falla de conexion".$e->getMessage();   
+           }
         } 
         
         

@@ -1,9 +1,7 @@
-
-    <div class="container">
-        <div class="row">  
-                    
+    <div class="container"> 
+        <div class="row">       
             <div class="col-md-1"></div>
-            <div class="col-md-10"  >
+            <div class="col-md-10"> 
                         <div class="container">
                             <div class="row" style="margin-top:15px;">
                                 <hr>
@@ -87,8 +85,7 @@
                                                 <div class="text-md-center d-grid gap-2 col-6 mx-auto">
                                                     <button class="btn btn-primary" > Iniciar Sesión <i class='fa fa-unlock'></i></button>
                                                 </div> 
-                                                
-                                                
+                            
                                             </form>
                                             <hr>
                                             <p class="text-md-end"><small><a class="color" href="recuperarContrasenia">¿Olvidó su contraseña?</a></small></p> 
@@ -100,13 +97,11 @@
                                 </div>
                             </div>
                             <b><hr></b>
-                        </div>
-                        
-                        <!-----------------------IFRAME----------------------------> 
+                        </div>                     
+                        <!--------------------------IFRAME-------------------------------> 
                         <div class="row">
                             <div class="col-md-2"></div>
                             <div class="col-md-8">
-                                
 
                                 <!-- Modal -->
                                 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -129,7 +124,7 @@
                             <div class="col-md-2"></div>  
                         </div>
 
-                        <!--------------------Aviso de Privacidad------------------->
+                        <!------------------------------Aviso de Privacidad------------------------->
                         <div class="container">
                         <div class="row">
                             <div class="col-md-12" style="text-align:center;">
@@ -137,13 +132,8 @@
                             </div>
                         </div>
                     </div>
-
-                    </br>
-                    
+                    </br>  
             </div>
-
-
         </div>
-        
     </div>
     <script src="<?=base_url?>assets/js/login.js"></script>    

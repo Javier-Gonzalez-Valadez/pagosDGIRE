@@ -1,4 +1,4 @@
-    <link rel="stylesheet" href="assets/css/recuperar_contrasenia.css">  
+    <link rel="stylesheet" href="../assets/css/recuperar_contrasenia.css">  
  </br> 
     <div class="row">
             <div class="col-md-3"></div>
@@ -24,7 +24,7 @@
                         
                         <div class="row">
                                 <div class="col-md-12 text-md-center">
-                                    <a href="index.php?controller=usuario&action=index" class="btn btn-primary" id="enviar">Salir <small><i class="fa fa-sign-out" aria-hidden="true"></i></small></a>
+                                    <a href="index" class="btn btn-primary" id="enviar">Salir <small><i class="fa fa-sign-out" aria-hidden="true"></i></small></a>
                                 </div>
                         </div>
                         </br>

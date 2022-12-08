@@ -1,5 +1,4 @@
-
-<link rel="stylesheet" href="assets/css/registro.css"> 
+<link rel="stylesheet" href="../assets/css/registro.css"> 
 
         <div class="row" >
             <div class="col-md-2"></div>
@@ -10,7 +9,7 @@
                     <h5 class="card-title" style="color: midnightblue; text-align:center;">Datos de registro al sistema de pagos DGIRE</h5>
                     <p style="text-align:center;"><small>Por favor llene el formulario que se le proporciona, los campos con * son obligatorios.</small></p>
 
-                    <div  class="marco" >Datos personales</div>
+                    <div class="marco">Datos personales</div>
                     </br>
                     <form method="POST" action="">
                         <!--Perfil-->
@@ -21,10 +20,28 @@
                                     <option selected id="pE">Seleccione</option>
                                     <option value="Alumno">Alumno</option>
                                     <option value="Director Tecnico">Director Tecnico</option>
-                                    <option value="Profesor">Profesor</option>
+                                    <option value="Profesor">Profesor</option> 
                                     <option value="Publico en general">Publico en general</option>
                                 </select> 
                             </div>  
+                        </div>
+                        <!-------------------------------CURP----------------------------->
+                        <div class="row mb-3" id="curp" hidden>
+                            <label for="apellidoMaterno" class="col-md-4 col-form-label text-md-end">CURP (*):</label>
+
+                            <div class="col-md-6"> 
+                                <input id="curptxt" type="text" class="form-control" name="curp" value="" required autocomplete="apellidoMaterno" autofocus>
+                                <span id="curpSuccess" hidden style="color:green;"><small><small>Curp de 18</small></small></span>
+                                <span id="curpError" hidden style="color:red;"><small><small>Curp de menos de 18</small></small></span>
+                            </div>
+                        </div> 
+                        <!--Numero de Ceunta-->
+                        <div class="row mb-3" hidden id="noExpdte">
+                            <label for="noExpdte"  class="col-md-4 col-form-label text-md-end">Numero de Cuenta (*):</label>
+
+                            <div class="col-md-6"> 
+                                <input id="noExpdte" type="text" class="form-control" name="noExpediente" value="" required autocomplete="apellidoMaterno" autofocus>
+                            </div>
                         </div> 
                         <!--Nombre-->
                         <div class="row mb-3">
@@ -35,7 +52,7 @@
                         </div>
                         <!--Apellido Paterno-->
                         <div class="row mb-3">
-                            <label for="apellidoPaterno" class="col-md-4 col-form-label text-md-end">Primer apellido (*):</label>
+                            <label for="apellidoPaterno" class="col-md-4 col-form-label text-md-end">Primer apellido (*):</label> 
                             <div class="col-md-6">
                                 <input id="apellidoPaterno" type="text" class="form-control" name="apellidoPaterno" value="" required autocomplete="apellidoPaterno">
                             </div>
@@ -55,14 +72,7 @@
                                 <input id="clavePlantel"  type="text" class="form-control" name="clavePlantel" value="" required autocomplete="apellidoPaterno">
                             </div> 
                         </div>  
-                        <!--Numero de Expediente-->
-                        <div class="row mb-3" hidden id="noExpdte">
-                            <label for="noExpdte"  class="col-md-4 col-form-label text-md-end">Numero de Expediente (*):</label>
-
-                            <div class="col-md-6">
-                                <input id="noExpdte" type="text" class="form-control" name="noExpediente" value="" required autocomplete="apellidoMaterno" autofocus>
-                            </div>
-                        </div>
+                        
                         <!--Correo-->
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">Correo Electronico (*):</label>
@@ -137,7 +147,7 @@
                             <div class="marco" id="marco">Datos de Facturación</div>
                             </br>
                         </div>
-                        <!--Tipo de persona--->
+                        <!------------------------Tipo de persona------------------->
                         <div class="row mb-3 " id="tipoPersona" hidden>
                             <label for="tipoPersona" class="col-md-4 col-form-label text-md-end">Tipo de persona (*):</label>
                             <div class="col-md-6">
@@ -149,7 +159,7 @@
                             </div>  
                         </div> 
 
-                        <!--RFC-->
+                        <!----------------------------RFC--------------------------------->
                         <div class="row mb-3" id="RFC" hidden>
                             <label for="RFC" class="col-md-4 col-form-label text-md-end">RFC (*):</label> 
 
@@ -224,7 +234,9 @@
                             <label for="calleFac" class="col-md-4 col-form-label text-md-end">Código Postal (*):</label>
 
                             <div class="col-md-6">
-                                <input  type="text" class="form-control" name="codigoPostal" value="" required >
+                                <input  type="text" class="form-control" id="codigoPostal" value="" required >
+                                <span id="codigoSuccess" hidden style="color:green;"><small><small>Codigo de 5</small></small></span>
+                                <span id="codigoError" hidden style="color:red;"><small><small>Codigo de menos de 5</small></small></span>
                             </div>
                         </div>
 
@@ -388,7 +400,7 @@
             <div class="col-md-2 text-md-end">
             </div>
             <div class="col-md-8 text-md-start">
-                <a href="acceso.php" class="btn btn-outline-primary btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i>  Regresar </a>
+                <a href="index" class="btn btn-outline-primary btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i>  Regresar </a>
 
             </div>
             <div class="col-md-2 text-md-end">  
@@ -396,7 +408,7 @@
                                                  
         </div>      
 
-    <script id="rendered-js">
+    <script id="rendered-js"> 
     $(document).ready(function ($) {
         $('#myPassword').strength({
         strengthClass: 'strength',
@@ -406,4 +418,34 @@
         strengthButtonTextToggle: 'Ocultar Password' });
     });
     </script>
-    <script type="text/javascript" src="assets/js/registro.js"></script> 
+    <script type="text/javascript" src="../assets/js/registro.js"></script> 
+
+    <?php 
+        /*public static function consultaCurp(){
+            echo "<h1>HOLA</h1>"; 
+            $curp = "GOVJ990904HMCNLV05";
+            $url = "https://apps.dgire.unam.mx/intranet/APIsis/curp/$curp";
+            $ch = curl_init($url); 
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            $resp = curl_exec($ch); 
+            curl_close($ch);
+            
+            $resp = json_decode($resp);
+            
+            if (!$resp->success) {
+                $resp = array(
+                    "error" => false
+                    , "success" => false
+                    , "renapo" => true
+                    , "message" => "No se encontro la CURP <strong>$curp</strong>",
+                );
+            
+                die(json_encode($resp));
+            }
+        
+            die(json_encode($resp));
+        }*/
+    ?>
+
+
+    
