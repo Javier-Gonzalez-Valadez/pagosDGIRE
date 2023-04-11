@@ -1,286 +1,324 @@
-$(document).ready(function(){
-    //Validaciones segun el perfil que se seleccione
-    $( '#perfil').on('change', function(event) {
-        var perfil= $("#perfil option:selected").val(); 
-            console.log("Entramos con "+perfil);  
-            if(perfil == "Alumno" || perfil == 'Profesor'){
-                $('#cvePlantel').attr( 'hidden', false );
-                   $('#noExpdte').attr( 'hidden', false); 
-            }
-            if(perfil == "Director Tecnico"){
-                $('#cvePlantel').attr( 'hidden', false );
-                $('#noExpdte').attr( 'hidden', true );
-            }
-            if(perfil == 'Publico en general'){
-                $('#cvePlantel').attr('hidden', true);
-                $('#noExpdte').attr('hidden', true);
-            }
-    });
-    //------------------------FACTURACION----------------------
-    $('#facturacion').on('change', function(){
-        
-        if(  $(this).is(':checked')  ){
-            $('.salto').attr('hidden', false);
-            $('#marco').attr('hidden', false);
-            $('#tipoPersona').attr('hidden',false);
-            $('#RFC').attr('hidden',false);
-            //$('#nombreFac').attr('hidden',false);
-            //$('#apellidoPaternoFac').attr('hidden',false);
-            //$('#apellidoMaternoFac').attr('hidden',false);
-            //$('#rsFac').attr('hidden',false);
-            $('#calleFac').attr('hidden',false);
-            $('#noExtFac').attr('hidden',false);
-            $('#noIntFac').attr('hidden',false);
-            $('#CPFac').attr('hidden',false);
-            $('#coloniaFac').attr('hidden',false);
-            $('#ciudadFac').attr('hidden',false);
-            $('#municipioFac').attr('hidden',false);
-            $('#estadoFac').attr('hidden',false);
-            $('#colNoAp').attr('hidden',false);
-            
-            //Mostrando asignacion de colonia o quitandola si se selecciona o se quita 
-            //el checkbox
-            $('#noApCol').on('change', function(){
-                if( $(this).is(':checked')){
-                    $('#ponerColonia').attr('hidden', false);                   
-                }else{
-                    $('#ponerColonia').attr('hidden', true);
-                }
-            });
-        }else{
-            $('.salto').attr('hidden', true);
-            $('#marco').attr('hidden', true);
-            $('#tipoPersona').attr('hidden',true);
-            $('#RFC').attr('hidden',true);
-            $('#nombreFac').attr('hidden',true);
-            $('#apellidoPaternoFac').attr('hidden',true);
-            $('#apellidoMaternoFac').attr('hidden',true);
-            $('#rsFac').attr('hidden',true);
-            $('#calleFac').attr('hidden',true);
-            $('#noExtFac').attr('hidden',true);
-            $('#noIntFac').attr('hidden',true);
-            $('#CPFac').attr('hidden',true);
-            $('#coloniaFac').attr('hidden',true);
-            $('#ciudadFac').attr('hidden',true);
-            $('#municipioFac').attr('hidden',true);
-            $('#estadoFac').attr('hidden',true);
-            $('#colNoAp').attr('hidden',true);
-            $('#ponerColonia').attr('hidden', true);
-            $('#selecTipoPersona').val("Seleccione");
-        }
-        
-    });
-    //--------------TIPO DE PERSONA EN FACTURACION--------------- 
-    $( '#selecTipoPersona').on('change', function() {
-        var perfilFac= $("#selecTipoPersona option:selected").val(); 
-            console.log("Entramos con "+perfilFac);  
-            if(perfilFac == "fisica"){
-                $('#nombreFac').attr('hidden',false);
-                $('#apellidoPaternoFac').attr('hidden',false);
-                $('#apellidoMaternoFac').attr('hidden',false);
-                $('#rsFac').attr('hidden',true);
-            }else if(perfilFac == "moral"){
-                $('#nombreFac').attr('hidden',true);
-                $('#apellidoPaternoFac').attr('hidden',true);
-                $('#apellidoMaternoFac').attr('hidden',true);
-                $('#rsFac').attr('hidden',false);
-            }else{
-                $('#nombreFac').attr('hidden',true);
-                $('#apellidoPaternoFac').attr('hidden',true);
-                $('#apellidoMaternoFac').attr('hidden',true);
-                $('#rsFac').attr('hidden',true);
-            }
-        });
-    
-    var correoValidado = false;
-    var confirmacionCorreoValidada = false;
-    //-----------------CORREO Y CONFIRMACION-------------------------
-    $('#correo').on('keyup', function(){
-        var validar =/([A-Z0-9a-z_-][^@])+?@[^$#<>?]+?\.[\w]{2,4}/.test(this.value);
-        if(!validar){
-            $('#errorCorreo').show();
-            $('#successCorreo').hide();
-
-        }else{  
-            correoValidado = true;
-            $('#errorCorreo').hide();
-            $('#successCorreo').show();
-        }
-
-        if(confirmacionCorreoValidada==true && ($('#confirmCorreo').val()!='') && ($('#correo').val()!=$('#confirmCorreo').val())){
-                $('#errorCorreoC').hide();
-                $('#successConfirm').hide();
-                $('#errorConfirm').show();
-        }else if(confirmacionCorreoValidada==true && ($('#confirmCorreo').val()!='') && ($('#correo').val()==$('#confirmCorreo').val())){
-            confirmacionCorreoValidada=false; 
-            $('#errorCorreoC').hide();
-            $('#successConfirm').show();
-            $('#errorConfirm').hide();
-        }else{} 
-    });
-
-
-    $('#confirmCorreo').on('keyup',function(){
-        var validar =/([A-Z0-9a-z_-][^@])+?@[^$#<>?]+?\.[\w]{2,4}/.test(this.value);
-        var longitudCorreo = $('#correo').val().length;
-        if(!validar){
-            $('#errorCorreoC').show();
-            $('#successConfirm').hide();
-            $('#errorConfirm').hide();
-        }else{  
-            
-            if( $('#confirmCorreo').val().length == longitudCorreo && correoValidado==true){ 
-                if($('#confirmCorreo').val() == $('#correo').val()){
-                        confirmacionCorreoValidada=true;
-                        $('#errorCorreoC').hide();
-                        $('#errorConfirm').hide();
-                        $('#successConfirm').show();    
-                }else{
-                        $('#errorCorreoC').hide();
-                        $('#successConfirm').hide();
-                        $('#errorConfirm').show();
-                }
-            }else{
-                    $('#errorCorreoC').hide();
-                    $('#successConfirm').hide();
-                    $('#errorConfirm').show();
-            }
-        }
-    });
-    
-    //_----------------TELEFONO (SOLO NUMEROS)-----------------------
-    $('#telefono').on('input', function () { 
-        this.value = this.value.replace(/[^0-9]/g,'');
-    });
-    //------------------CELULAR (SOLO NUMEROS)------------------------
-    $('#celular').on('input', function () { 
-        this.value = this.value.replace(/[^0-9]/g,'');
-    });
-    
-    //---------------------------------------CAPTCHA---------------------------------------------
-    
-    let haEscrito = false;
-    let primerValor = random(1,100);
-    let segundoValor = random(1,100);
-    let resultado = primerValor + segundoValor;
-    $('#captcha').on('change', function(e){ 
-        primerValor = random(1,100);
-        segundoValor = random(1,100);
-        resultado = primerValor + segundoValor; 
-        
-        if( $(this).is(':checked') ){
-            console.log(resultado); 
-            $('#suma').attr('hidden',false);
-            $('#operacion').html(primerValor + " + " + segundoValor);   
-            $('#result').on('keyup', function(e){
-                console.log("Longitud del resultado"+ resultado.toString().length);
-                this.value = this.value.replace(/[^0-9]/g,'');
-                
-                if($('#result').val().length != 0){
-                    
-                    if( (resultado.toString().length==3) && ($('#result').val().length == resultado.toString().length) ){
-                        haEscrito=true;
-                        console.log("ENtramos al IF"+ resultado);
-                        if($('#result').val() == resultado){
-                            
-                            $('#resultCorrecto').show();
-                            $('#resultIncorrecto').hide();                        
-                        }else{
-                            $('#resultCorrecto').hide();
-                            $('#resultIncorrecto').show();
-                        }
-                    }
-                    if( (resultado.toString().length==2) && ($('#result').val().length == resultado.toString().length) ){ 
-                        haEscrito=true;
-                            console.log("CErca");
-                            if($('#result').val() == resultado){
-                                $('#resultCorrecto').show();
-                                $('#resultIncorrecto').hide();
-                            }else{
-                                $('#resultCorrecto').hide();
-                                $('#resultIncorrecto').show();
-                            }
-                    }else if(($('#result').val().length!=resultado.toString().length) && haEscrito==true && $('#result').val().length!=0){
-                            console.log("Entramos");
-                            $('#resultCorrecto').hide();
-                            $('#resultIncorrecto').hide();
-                            haEscrito=false;
-                    }else{}
-                }else{
-                    $('#resultCorrecto').hide();
-                    $('#resultIncorrecto').hide();
-                    haEscrito=false;
-                }                 
-            });
-        }else{
-            $('#suma').attr('hidden',true);
-            $('#resultCorrecto').hide();
-            $('#resultIncorrecto').hide(); 
-            $('#result').val('');
-        }
-        $('#refrescar').on('click',function(e){
-            
-            primerValor=random(1,100);
-            segundoValor=random(1,100);
-            resultado=primerValor+segundoValor;
-            console.log(resultado);
-            $('#operacion').html(primerValor + " + " + segundoValor);
-            $('#result').val('');
-            $('#resultCorrecto').hide();
-            $('#resultIncorrecto').hide();
-            haEscrito=false;
-            e.preventDefault();
-            
-        });
-    });
+$('#registrarCert').on('click', function(e){
+    e.preventDefault(); 
+    registrarEmpleadoCert();
 });
 
-//---------------------------------VERIFICAR CONTRASEÑA--------------------------------------
-$('#password').keyup(function(e) {
-    var strongRegex = new RegExp("^(?=.{10,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
-    var mediumRegex = new RegExp("^(?=.{9,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
-    var enoughRegex = new RegExp("(?=.{8,}).*", "g");
-    if ( enoughRegex.test($(this).val()) == false) {
-            $('#passstrength').removeClass('text-success');
-            $('#passstrength').removeClass('text-warning');
-            $('#passstrength').removeClass('text-danger');
-            $('#passstrength').addClass('text-primary');
-            $('#passstrength').html('Al menos 8 caracteres.');
-    } else if (strongRegex.test($(this).val())) {
-            $('#passstrength').removeClass('text-warning');
-            $('#passstrength').removeClass('text-danger');
-            $('#passstrength').addClass('text-success');
-            $('#passstrength').html('Fuerte');
-    } else if (mediumRegex.test($(this).val())) {
-            $('#passstrength').removeClass('text-success');
-            $('#passstrength').removeClass('text-danger');
-            $('#passstrength').addClass('text-warning'); 
-            $('#passstrength').html('Media');
-    } else {
-            $('#passstrength').removeClass('text-success');
-            $('#passstrength').removeClass('text-alert');
-            $('#passstrength').addClass('text-danger'); 
-            $('#passstrength').html('Débil');
+//VALIDACION DE QUE LOS CAMPOS NO ESTÉN VACÍOS  INCLUYENDO ALERTA-------------------------------------
+function validarFormCert(){
+    if($('#nombreCert').val()!="" && $('#correoCert').val()!="" 
+    && $('#loginCert').val()!="" &&  $('#passwordCert').val()!="" && $('#password-confirmCert').val()!=""){
+        if ($('#deptoCert').val()!="Seleccione" && $('#perfilCert').val() !='Seleccione' && $('#activoSelect').val() !='Seleccione'){    
+            return true;  
+        }else{ 
+            
+            return false;  
+        } 
+          
+
+    }else{
+        return false; 
     }
-    return true;
+}
 
+function validarPasswd(){
+    if ($('#passwordCert').val() == $('#password-confirmCert').val()) {
+        return true;
+    }else{
+        return false;
+    }
+    
+}
+$('#password-confirmCert').keyup(function(){    
+    $('#passwordCert').removeClass('noConfirmPasswd'); 
+    $('#password-confirmCert').removeClass('noConfirmPasswd');   
+    $('#spanNoCoincide1').attr('hidden', true);   
+    $('#spanNoCoincide2').attr('hidden', true);  
+    $('#password-confirmCert').removeClass('sinLlenar'); 
+    $('#spanConfirmPassword').attr('hidden', true); 
+     
 });
 
-//-------------------------Terminos y condiciones----------------------------
-$('#tyc').on('change', function(e){
- 
-    if(e.target.checked){
-        console.log("ENtramoooooos");
-        $('#staticBackdrop').modal("show"); 
+$('#loginCert').keyup(function(){
+    if($('#loginCert').val().length>=3 && $('#loginCert').val().length<=8){ 
+        loginCert = $('#loginCert').val();
+        $.ajax({ 
+            url: "http://132.247.147.17/~javiergv/controlAsistencia/usuario/buscarPorLoginStaff", 
+            type: "POST",   
+            data: { 
+                loginCert : loginCert, 
+            },
+            success: function (data) {
+                //alertaAgregado();
+                data=JSON.parse(data);
+                setTimeout(function() {   
+
+                },3000);
+                console.log(data);
+                $('#nombreCert').val(data.staff_nombre);
+                $('#correoCert').val(data.staff_email+'@dgire.unam.mx');
+                $('#passwordCert').val(data.staff_pass); 
+                $('#password-confirmCert').val(data.staff_pass) ;                
+            },  
+            error: function () {
+                alertaError();
+            },
+        });
+    }else{  
+    }
+});
+
+
+//FUNCION AJAX DE REGISTRO EMPLEADO DE CERTIFICACION
+function registrarEmpleadoCert(){
+    
+    if(validarFormCert() && validarPasswd()){   
+        var nombreCert = $('#nombreCert').val();
+        var correoCert = $('#correoCert').val();
+        var loginCert = $('#loginCert').val();
+        var loginUsuario = $('#loginCert').val();
+        var passwordCert= $('#passwordCert').val(); 
+        var deptoCert= $('#deptoCert').val();
+        var perfilCert =  $('#perfilCert').val(); 
+        var activoCert =  $('#activoSelect').val(); 
+        var data=""
         
+        $.ajax({ 
+            url: "http://132.247.147.17/~javiergv/controlAsistencia/usuario/buscarUsuario",   
+            type: "POST",   
+            data: {
+                loginUsuario : loginUsuario, 
+            },
+            success: function (user) {
+                datos=JSON.parse(user);
+                alertaYaExiste();   
+                //--------LOGIN
+                if($('#loginCert').val()!=""){
+                    $('#loginCert').addClass('sinLlenar');
+                    $('#spanYaExiste').attr('hidden', false);  
+                    $('#loginCert').keyup(function(){
+                        $('#loginCert').removeClass('sinLlenar');
+                        $('#spanYaExiste').attr('hidden', true);  
+                    });
+                }else{
+                    $('#loginCert').removeClass('sinLlenar'); 
+                    $('#spanYaExiste').attr('hidden', true);  
+                }
+                
+            },  
+            error: function () {
+                datos=false;
+                $.ajax({ 
+                    url: "http://132.247.147.17/~javiergv/controlAsistencia/usuario/registrarUsuarioCert", 
+                    type: "POST",   
+                    data: {
+                        nombreCert : nombreCert,
+                        correoCert : correoCert,
+                        loginCert : loginCert, 
+                        passwordCert : passwordCert,
+                        deptoCert : deptoCert, 
+                        perfilCert : perfilCert, 
+                        activoCert: activoCert 
+                    },
+                    success: function () {
+                        alertaAgregado();
+                        setTimeout(function() {   
+                            $('#nombreCert').val('');
+                            $('#correoCert').val(''); 
+                            $('#loginCert').val('');
+                            $('#passwordCert').val('');
+                            $('#password-confirmCert').val('');
+                            $('#deptoCert').val('Seleccione'); 
+                            $('#perfilCert').val('Seleccione'); 
+                            $('#activoSelect').val('Seleccione');  
+                            $('#passwordCert').removeClass('noConfirmPasswd'); 
+                            $('#password-confirmCert').removeClass('noConfirmPasswd');   
+                            $('#spanNoCoincide1').attr('hidden', true);   
+                            $('#spanNoCoincide2').attr('hidden', true);  
+                        },3000);
+                    },  
+                    error: function () {
+                        alertaError();
+                    },
+                });
+            },
+        });
+    }else{
+        camposFaltantes();
+        remarcarCampos();
+    }
+} 
+
+function remarcarCampos(){
+     //-----------NOMBRE
+     if($('#nombreCert').val()==""){
+        $('#nombreCert').addClass('sinLlenar');
+        $('#spanNombre').attr('hidden', false); 
+        $('#nombreCert').keyup(function(){
+            $('#nombreCert').removeClass('sinLlenar');
+            $('#spanNombre').attr('hidden', true);  
+        });
+    }else{
+        $('#nombreCert').removeClass('sinLlenar');
+        $('#spanNombre').attr('hidden', true);  
+    }
+    //--------CORREO
+    if($('#correoCert').val()==""){
+        $('#correoCert').addClass('sinLlenar');
+        $('#spanCorreo').attr('hidden', false); 
+        $('#correoCert').keyup(function(){
+            $('#correoCert').removeClass('sinLlenar');
+            $('#spanCorreo').attr('hidden', true);  
+        });
+    }else{
+        $('#correoCert').removeClass('sinLlenar');
+        $('#spanCorreo').attr('hidden', true);  
+    }
+    //--------LOGIN
+    if($('#loginCert').val()==""){
+        $('#loginCert').addClass('sinLlenar');
+        $('#spanLogin').attr('hidden', false); 
+        $('#loginCert').keyup(function(){
+            $('#loginCert').removeClass('sinLlenar');
+            $('#spanLogin').attr('hidden', true);  
+        });
+    }else{
+        $('#loginCert').removeClass('sinLlenar'); 
+        $('#spanLogin').attr('hidden', true);  
+    }
+    //--------DEPARTAMENTO
+    if($('#deptoCert').val()=="Seleccione"){ 
+        $('#deptoCert').addClass('sinLlenar'); 
+        $('#spanDepto').attr('hidden', false); 
+        $('#deptoCert').change(function(){
+            if($('#deptoCert').val()!="Seleccione"){
+                $('#deptoCert').removeClass('sinLlenar');
+                $('#spanDepto').attr('hidden', true);  
+            }                 
+        });
+    }else{
+        $('#deptoCert').removeClass('sinLlenar'); 
+        $('#spanDepto').attr('hidden', true);  
+    }
+    //--------CONTRASEÑA
+    if($('#passwordCert').val()==""){ 
+        $('#passwordCert').addClass('sinLlenar'); 
+        $('#spanPassword').attr('hidden', false); 
+        $('#passwordCert').keyup(function(){
+            $('#passwordCert').removeClass('sinLlenar');
+            $('#spanPassword').attr('hidden', true);  
+        });
+    }else{ 
+        $('#passwordCert').removeClass('sinLlenar'); 
+        $('#spanPassword').attr('hidden', true);  
+    } 
+   //--------CONFIRMAR CONTRASEÑA 
+   if($('#password-confirmCert').val()==""){ 
+    $('#password-confirmCert').addClass('sinLlenar');  
+    $('#spanConfirmPassword').attr('hidden', false); 
+    $('#password-confirmCert').keyup(function(){    
+        $('#passwordCert').removeClass('noConfirmPasswd'); 
+        $('#password-confirmCert').removeClass('noConfirmPasswd');   
+        $('#spanNoCoincide1').attr('hidden', true);   
+        $('#spanNoCoincide2').attr('hidden', true);  
+        $('#password-confirmCert').removeClass('sinLlenar'); 
+        $('#spanConfirmPassword').attr('hidden', true); 
+         
+    });
+    }else if(($('#passwordCert').val()!= '' && $('#password-confirmCert').val()!='') && ($('#passwordCert').val() != $('#password-confirmCert').val())){
+        $('#passwordCert').addClass('noConfirmPasswd'); 
+        $('#password-confirmCert').addClass('noConfirmPasswd'); 
+        $('#spanNoCoincide1').attr('hidden', false);  
+        $('#spanNoCoincide2').attr('hidden', false); 
         
     }else{
-        $('#staticBackdrop').modal("hide");
+        $('#password-confirmCert').removeClass('sinLlenar'); 
+        $('#spanConfirmPassword').attr('hidden', true); 
+        $('#passwordCert').removeClass('noConfirmPasswd'); 
+        $('#password-confirmCert').removeClass('noConfirmPasswd');   
+        $('#spanNoCoincide1').attr('hidden', true);   
+        $('#passwordCert').removeClass('noConfirmPasswd'); 
+        $('#password-confirmCert').removeClass('noConfirmPasswd');   
+        $('#spanNoCoincide1').attr('hidden', true);   
+        $('#spanNoCoincide2').attr('hidden', true);  
     }
-        
-});
+    //--------PERFIL
+    if($('#perfilCert').val()=="Seleccione"){ 
+        $('#perfilCert').addClass('sinLlenar'); 
+        $('#spanPerfil').attr('hidden', false); 
+        $('#perfilCert').change(function(){
+            if($('#perfilCert').val()!="Seleccione"){
+                $('#perfilCert').removeClass('sinLlenar');
+                $('#spanPerfil').attr('hidden', true);  
+            }                 
+        });
+    }else{
+        $('#perfilCert').removeClass('sinLlenar'); 
+        $('#spanPerfil').attr('hidden', true);   
+    }
+    //--------ACTIVO
+    if($('#activoSelect').val()=="Seleccione"){ 
+        $('#activoSelect').addClass('sinLlenar'); 
+        $('#spanActivo').attr('hidden', false); 
+        $('#activoSelect').change(function(){
+            if($('#activoSelect').val()!="Seleccione"){
+                $('#activoSelect').removeClass('sinLlenar');
+                $('#spanActivo').attr('hidden', true);  
+            }                 
+        });
+    }else{
+        $('#activoSelect').removeClass('sinLlenar'); 
+        $('#spanActivo').attr('hidden', true);   
+    }
+}
+ 
+function alertaAgregado(){
+    var Toast = Swal.mixin({  
+        toast: true,
+        position: 'top-center', 
+        showConfirmButton: false,     
+        timer: 4000  
+    });    
+    Toast.fire({    
+        icon: 'success',
+        title: 'Usuario Registrado Satisfactoriamente...!!'
+    })
+}
 
+function alertaError(){
+    var Toast = Swal.mixin({  
+        toast: true,
+        position: 'top-center', 
+        showConfirmButton: false,     
+        timer: 5000  
+    });   
+    Toast.fire({   
+        icon: 'error',
+        title: 'No se pudo registrar el empleado, verifique y vuelvalo a intentar...'
+    })
+}
 
-function random(min, max) {
-    return Math.floor((Math.random() * (max - min + 1)) + min);
+function alertaYaExiste(){
+    var Toast = Swal.mixin({  
+        toast: true,
+        position: 'top-center', 
+        showConfirmButton: false,     
+        timer: 5000  
+    });   
+    Toast.fire({   
+        icon: 'error',
+        title: 'Ya existe un usuario registrado en el sistema con ese login, intenta con otro !'
+    })
+}
+
+function camposFaltantes(){
+    var Toast = Swal.mixin({  
+        toast: true,
+        position: 'top-center', 
+        showConfirmButton: false,     
+        timer: 4000  
+    });   
+    Toast.fire({    
+        icon: 'error',
+        title: 'Hacen falta campos por completar !!'
+    })
 }

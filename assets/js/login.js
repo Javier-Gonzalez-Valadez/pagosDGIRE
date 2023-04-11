@@ -1,93 +1,151 @@
-$(document).ready(function(){
-    $('#abrirModal').click(function(){
-        $('.tycModal').show();
-        $('#cerrarModal').trigger("click");
+//---------------------------------------------------------------VALIDACIONES PARA LOGIN DE USUARIOS SIN PRIVILEGIOS----------------------------------------------
+$( document ).ready(function(){
+    
+    $('#entrar').on('click', function (e) {
         
-        $('.tycModal').show();
-    });
+        logearEmpleado();
+    });   
+    
+    function validarDatos(){
+        if ($('#loginUsuario').val() == "") { 
+            return false;
+        }else{
+            return true;
+        }
+    } 
 
-    $('#cerrarModal').on('click', function(){
-            $('.tycModal').hide();
-        });
-        
-    let haEscrito = false;
-    let primerValor = random(1,100);
-    let segundoValor = random(1,100);
-    let resultado = primerValor + segundoValor;
-        $('#captcha').on('change', function(e){ 
-            primerValor = random(1,100);
-            segundoValor = random(1,100);
-            resultado = primerValor + segundoValor; 
+    function logearEmpleado(){ 
+        if(validarDatos()){
+            var loginUsuario = $('#loginUsuario').val();
             
-            if( $(this).is(':checked') ){
-                console.log(resultado); 
-                $('#suma').attr('hidden',false);
-                $('#operacion').html(primerValor + " + " + segundoValor);   
-                $('#result').on('keyup', function(e){
-                    console.log("Longitud del resultado"+ resultado.toString().length);
-                    this.value = this.value.replace(/[^0-9]/g,'');
-                    
-                    if($('#result').val().length != 0){
+            $.ajax({ 
+                url: "http://132.247.147.17/~javiergv/controlAsistencia/usuario/registrarLlegada",
+                type: "POST", 
+                data: {
+                    loginUsuario: loginUsuario 
+                },  
+                success: function(data){   
+                    alertaSuccess();
+                    data = JSON.parse(data);    
+                    $('#noUsuario').attr("hidden", true); 
+                    var infUser = 'Hola '+ data.nombre + ", tu hora de llegada " + (data.llegada).substring(11,19); 
+                    $('.infUser').text(infUser); 
+                    $('.infUser').attr("hidden", false);
+                    $('#loginUsuario').attr('disabled', 'disabled'); 
+                    $(".infUser").fadeOut(7000);
+                    setTimeout(function() {
+                        window.location.href = 'http://132.247.147.17/~javiergv/controlAsistencia/usuario/index'; 
                         
-                        if( (resultado.toString().length==3) && ($('#result').val().length == resultado.toString().length) ){
-                            haEscrito=true;
-                            console.log("ENtramos al IF"+ resultado);
-                            if($('#result').val() == resultado){
-                                
-                                $('#resultCorrecto').show();
-                                $('#resultIncorrecto').hide();                        
-                            }else{
-                                $('#resultCorrecto').hide();
-                                $('#resultIncorrecto').show();
-                            }
-                        }
-                        if( (resultado.toString().length==2) && ($('#result').val().length == resultado.toString().length) ){ 
-                            haEscrito=true;
-                                console.log("CErca");
-                                if($('#result').val() == resultado){
-                                    $('#resultCorrecto').show();
-                                    $('#resultIncorrecto').hide();
-                                }else{
-                                    $('#resultCorrecto').hide();
-                                    $('#resultIncorrecto').show();
-                                }
-                        }else if(($('#result').val().length!=resultado.toString().length) && haEscrito==true && $('#result').val().length!=0){
-                                console.log("Entramos");
-                                $('#resultCorrecto').hide();
-                                $('#resultIncorrecto').hide();
-                                haEscrito=false;
-                        }else{}
-                    }else{
-                        $('#resultCorrecto').hide();
-                        $('#resultIncorrecto').hide();
-                        haEscrito=false;
-                    }                 
-                });
-            }else{
-                $('#suma').attr('hidden',true);
-                $('#resultCorrecto').hide();
-                $('#resultIncorrecto').hide(); 
-                $('#result').val('');
-            }
-            $('#refrescar').on('click',function(e){
-                
-                primerValor=random(1,100);
-                segundoValor=random(1,100);
-                resultado=primerValor+segundoValor;
-                console.log(resultado);
-                $('#operacion').html(primerValor + " + " + segundoValor);
-                $('#result').val('');
-                $('#resultCorrecto').hide();
-                $('#resultIncorrecto').hide();
-                haEscrito=false;
-                e.preventDefault();
-                
+                    },7000);                     
+                }
+            }).fail( function( jqXHR, textStatus, errorThrown ) {
+                if (jqXHR.status === 303) {
+
+                    checoHoy();
+                    $('#noUsuario').attr("hidden", true);  
+                    $('.infUser').attr("hidden", true); 
+                    $('#loginUsuario').attr('disabled', 'disabled');
+                    $("#noUsuario").fadeOut(5000);  
+                    setTimeout(function() { 
+                        
+                        window.location.href = 'http://132.247.147.17/~javiergv/controlAsistencia/usuario/index';
+                    },5000);
+                }
+                else if (jqXHR.status == 302) {
+
+                    alertaError();
+                    $('#noUsuario').attr("hidden", false); 
+                    $('.infUser').attr("hidden", true); 
+                    $('#loginUsuario').attr('disabled', 'disabled');
+                    $("#noUsuario").fadeOut(5000);  
+                    setTimeout(function() { 
+                        
+                        window.location.href = 'http://132.247.147.17/~javiergv/controlAsistencia/usuario/index';
+                    },5000);
+        
+                  }
+                  else if (jqXHR.status == 305) {
+
+                    var Toast = Swal.mixin({  
+                        toast: true,
+                        position: 'top-center', 
+                        showConfirmButton: false,     
+                        timer: 6000  
+                        });   
+                        Toast.fire({   
+                            icon: 'info',
+                            title: 'El Usuario NO ESTA ACTIVO. No puede registrar asistencias ni realizar alguna acción en el sistema.' 
+                        })
+        
+                  }
             });
-        });    
+        }else{ 
+            alertaVacio(); 
+        }
+    }
 
 
+    function alertaError(){
+        var Toast = Swal.mixin({  
+            toast: true,
+            position: 'top-right', 
+            showConfirmButton: false,     
+            timer: 5000  
+        });   
+        Toast.fire({   
+            icon: 'error',
+            title: 'No se ha digitado correctamente el Login del empleado, verifique.'
+        })
+    }
+    function alertaVacio(){
+        var Toast = Swal.mixin({  
+            toast: true,
+            position: 'center', 
+            showConfirmButton: false,     
+            timer: 5000  
+        });   
+        Toast.fire({    
+            icon: 'error',
+            title: 'Tienes que digitar tu Login primeramente !!'
+        })
+    }
+    function checoHoy(){
+        var Toast = Swal.mixin({  
+            toast: true,
+            position: 'center', 
+            showConfirmButton: false,     
+            timer: 5000  
+        });   
+        Toast.fire({    
+            icon: 'warning',
+            title: 'El usuario ya ha registrado su asistencia el día de hoy!!'
+        })
+    }
+    function alertaSuccess(){
+        var Toast = Swal.mixin({  
+            toast: true,
+            position: 'top-right', 
+            showConfirmButton: false,     
+            timer: 5000  
+        });   
+        Toast.fire({   
+            icon: 'success',
+            title: 'Empleado encontrado, bienvenido/a.'
+        })
+    }
+//---------------------------------------------------FIN DE VALIDACIONES PARA USUSARIOS SIN PRIVILEGIOS-----------------------------------------------------------
+
+
+
+
+//--------------------------------------------------INICIO DE VALIDACIONES PARA USUARIOS ADMINS CON PRIVILEGIOS----------------------------------------------------------
+
+    
+
+
+
+//---------------------------------------------------FIN DE VALIDACIONES PARA USUSARIOS ADMINS CON PRIVILEGIOS-----------------------------------------------------------
+
+    
 });
-
-function random(min, max) {
-    return Math.floor((Math.random() * (max - min + 1)) + min);
-}
+    

@@ -1,0 +1,28 @@
+#actualizarBtnCert{
+    color: white; 
+    display: inline-block;
+    
+}
+
+#cancelarBtnCert{ 
+    display: inline-block;
+    
+}
+#btnVolverBuscar{
+    color: midnightblue ;
+    outline: 1.5px solid midnightblue;
+}
+
+.espaciado{
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.sinLlenar{ 
+    border-color: rgb(255, 0, 0) !important; 
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(255,0,0,0.6);
+}
+
+.noConfirmPasswd{
+    border-color: rgb(255, 255, 0) !important; 
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(255,255,0,0.6);
+}

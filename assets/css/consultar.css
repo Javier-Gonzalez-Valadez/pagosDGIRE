@@ -1,0 +1,15 @@
+.boton{
+    color: midnightblue !important;  
+    outline: 1.5px solid midnightblue;
+}
+  
+#consulBtn{
+    /* background-color: midnightblue; */
+    color: white;  
+}
+
+.sinLlenar{
+    outline:1.5 px solid red !important; 
+
+}
+

@@ -2,91 +2,9 @@ body{
     /*background-image: url("../imgs/cubes.jpg");*/
     background-size: cover;
     background-repeat: no-repeat;
-}
-.banner{
-    background-color:midnightblue;  
-    text-align: center; 
-    align-items: center;
-}
-.bannerPagos{
-    background-color:goldenrod;  
-    text-align: center;
-    align-items: center;
-}
-.color{
-    color: midnightblue;
-}
+    background-color: rgb(240,245,250); 
+} 
 
-
-
-.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-    background-color: midnightblue !important;
-    border-color: midnightblue !important;
-}
-
-#imgUnam:hover{
-    cursor: pointer;
-}
-
-#imgDgire:hover{
-    cursor: pointer;
-}
-
-#imgUnam{
-    max-width: 70px;
-    max-height: 50px;
-}
-#imgDgire{
-    max-width: 70px;
-    max-height: 50px;
-}
-
-#txtUnam{
-    color:white;
-    font-size: 18px;;
-}
-
-#txtDgire{
-    color:GoldenRod;
-    font-size: 18px;;
-}
-
-.logoUser{
-    font-size: 1.5em;
-    color: rgb(134, 134, 134);
-}
-
-.txtPagos{
-    color: white;
-    font-size: 26px;
-}
-.footer{
-    margin-top: 0.5em;
-    text-align: center; 
-    
-}
-
-.textoFooter{
-    padding-left: 4vh; 
-    padding-right: 4vh;
-    font-size: 0.75em;
-}
-/*DGIRE Y UNAM*/
-@media (min-width: 1001px){
-    .hidden-lg, .hidden-md{
-        display: none !important;
-    }
-    .hidden-sm, .hidden-xs{
-        display: true;
-       }
-}
-
-/*DIRECCION GENERAL DE INCORPORACION Y UNIVERSIDAD NACIONAL AUTONOMA MEXICO*/
-@media (max-width: 1000px){
-    .hidden-sm, .hidden-xs{
-     display: none !important;
-    }
-    .hidden-lg, .hidden-md{
-        display:  true;
-    }
+.pestaña{
+    background-color: midnightblue;
 }

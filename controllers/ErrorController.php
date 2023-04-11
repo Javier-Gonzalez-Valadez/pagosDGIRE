@@ -1,6 +1,10 @@
 <?php
+include_once 'views/layouts/cabecera.php';
     class ErrorController{
-        public function index(){
-            echo "<h1>La pagina que buscas no existe - 40444</h1>";
+        
+        public function index(){ 
+                  
+            require 'views/error.php';
         }
     }
+     
